@@ -201,12 +201,13 @@ h1.display em{font-style:normal;display:block;margin-top:-.04em}
    Photo-led, magazine-style — designed for scene photography
    ============================================================ */
 .p-card{
-  background:#fff;border-radius:24px;border:1px solid var(--line-soft);
+  background:#fff;border-radius:24px;
   display:flex;flex-direction:column;overflow:hidden;
-  transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s,border-color .35s;
+  box-shadow:0 1px 0 rgba(5,5,69,.04),0 8px 24px -16px rgba(5,5,69,.08);
+  transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s;
   cursor:pointer;
 }
-.p-card:hover{transform:translateY(-5px);box-shadow:0 30px 60px -28px rgba(5,5,69,.18);border-color:rgba(45,105,255,.25)}
+.p-card:hover{transform:translateY(-5px);box-shadow:0 30px 60px -28px rgba(5,5,69,.22),0 0 0 1px rgba(45,105,255,.18)}
 .p-card .p-photo{position:relative;aspect-ratio:5/4;overflow:hidden;background:#f0f4fa}
 .p-card .p-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s ease}
 .p-card:hover .p-photo img{transform:scale(1.04)}
@@ -276,22 +277,21 @@ h1.display em{font-style:normal;display:block;margin-top:-.04em}
   .p-functional .p-fn-variant{padding:12px 10px}
 }
 
-/* THE HONEST ASIDE — for the plastic loyalists.
-   Self-aware, conversational, visually distinct from rest of grid. */
-.p-aside{grid-column:1 / -1;display:grid;grid-template-columns:1.05fr .95fr;background:#FFF6E1;border-radius:28px;border:1.5px dashed rgba(160,104,15,.35);overflow:hidden;position:relative;align-items:stretch}
-.p-aside::before{content:"⚠";position:absolute;top:18px;right:24px;font-size:30px;opacity:.4;font-family:sans-serif;z-index:3}
+/* THE HONEST ASIDE — for the plastic fans.
+   Editorial / candid voice. Kinda Black background, brand accents only. */
+.p-aside{grid-column:1 / -1;display:grid;grid-template-columns:1.05fr .95fr;background:var(--ink);border-radius:28px;overflow:hidden;position:relative;align-items:stretch;color:#f4f4f0}
 .p-aside-copy{padding:56px;display:flex;flex-direction:column;justify-content:center;gap:18px}
-.p-aside-tag{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#a0680f;display:flex;align-items:center;gap:8px}
-.p-aside-tag i{width:5px;height:5px;background:#a0680f;border-radius:50%;font-style:normal;display:inline-block}
-.p-aside-h{font-family:"Archivo Black",sans-serif;font-size:clamp(36px,4vw,60px);line-height:.92;letter-spacing:-.025em;text-transform:uppercase;color:var(--blue-deep);margin:0}
-.p-aside-h .strike{position:relative;display:inline-block;color:#a0680f}
-.p-aside-h .strike::after{content:"";position:absolute;left:-3%;right:-3%;top:48%;height:4px;background:#d63a3a;transform:rotate(-3deg);border-radius:2px}
-.p-aside-copy p{font-size:16.5px;line-height:1.6;color:#3a3020;max-width:480px;margin:0}
-.p-aside-meta{display:flex;flex-wrap:wrap;gap:10px;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#7a5a20;margin-top:12px;align-items:center}
-.p-aside-meta .sep{opacity:.4}
-.p-aside-meta a{color:var(--blue);text-decoration:none;font-weight:600;display:inline-flex;align-items:center;gap:6px;transition:gap .25s}
-.p-aside-meta a:hover{gap:10px}
-.p-aside-photo{position:relative;background:#fcf2dd;overflow:hidden;min-height:380px}
+.p-aside-tag{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);display:flex;align-items:center;gap:8px;font-weight:500}
+.p-aside-tag i{width:5px;height:5px;background:var(--blue);border-radius:50%;font-style:normal;display:inline-block}
+.p-aside-h{font-family:"Archivo Black",sans-serif;font-size:clamp(36px,4vw,60px);line-height:.92;letter-spacing:-.025em;text-transform:uppercase;color:#fff;margin:0}
+.p-aside-h .strike{position:relative;display:inline-block;color:#9aa3ff}
+.p-aside-h .strike::after{content:"";position:absolute;left:-3%;right:-3%;top:48%;height:4px;background:var(--blue);transform:rotate(-3deg);border-radius:2px;box-shadow:0 0 12px rgba(45,105,255,.5)}
+.p-aside-copy p{font-size:16.5px;line-height:1.6;color:#bcc0d0;max-width:520px;margin:0}
+.p-aside-meta{display:flex;flex-wrap:wrap;gap:10px;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8a90a8;margin-top:14px;align-items:center}
+.p-aside-meta .sep{opacity:.5}
+.p-aside-meta a{color:var(--blue);text-decoration:none;font-weight:600;display:inline-flex;align-items:center;gap:6px;transition:gap .25s,color .25s}
+.p-aside-meta a:hover{gap:10px;color:#9aa3ff}
+.p-aside-photo{position:relative;background:#0c0c08;overflow:hidden;min-height:380px}
 .p-aside-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s ease}
 .p-aside:hover .p-aside-photo img{transform:scale(1.03)}
 
@@ -299,7 +299,6 @@ h1.display em{font-style:normal;display:block;margin-top:-.04em}
   .p-aside{grid-template-columns:1fr}
   .p-aside-copy{padding:40px 28px;gap:16px}
   .p-aside-photo{aspect-ratio:5/4;min-height:0}
-  .p-aside::before{font-size:24px;top:14px;right:18px}
 }
 @media (max-width:640px){
   .p-aside-copy{padding:32px 22px}
@@ -404,7 +403,8 @@ h1.display em{font-style:normal;display:block;margin-top:-.04em}
 .sip-row a{padding:12px 20px;border-radius:999px;font-size:13px;font-weight:600;display:inline-flex;align-items:center;gap:9px}
 .sip-a1{background:#fff;color:#0a1330}
 .sip-a2{border:1px solid rgba(255,255,255,.28);color:#fff}
-.sip-img{position:relative;z-index:2;height:520px;background:url('assets/products/sip-stack-light.png') center/cover no-repeat;border-radius:0 32px 32px 0}
+.sip-img{position:relative;z-index:2;height:520px;background:url('assets/lifestyle/sip-night.png') center/cover no-repeat;border-radius:0 32px 32px 0}
+.sip-img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,19,48,.45) 0%,transparent 35%);pointer-events:none}
 
 /* FOOTER CTA */
 .footer-cta{padding:120px 36px 60px;max-width:1480px;margin:0 auto;text-align:center}
@@ -437,7 +437,13 @@ footer{border-top:1px solid var(--line);padding:56px 36px 36px;max-width:1480px;
   .p-luxury,.p-premium,.p-sip,.p-thce,.p-protein,.p-soon{grid-column:span 2}
   .p-soon-body{grid-template-columns:1fr;gap:12px}
   .planet-grid{grid-template-columns:1fr;gap:40px;padding:48px 28px}
-  .planet-stats,.pbadge{display:none}
+  .planet-stats{grid-template-columns:1fr 1fr;gap:14px}
+  .pbadge{grid-column:span 2;padding:18px}
+  .pstat{padding:22px 18px}
+  .pstat .big{font-size:38px}
+  .pstat .big.sm{font-size:24px}
+  .pbadge svg{width:24px;height:24px}
+  .pbadge p{font-size:13px}
   .connect{margin:60px 16px;padding:48px 28px}
   .connect-visual{height:320px}
   .sip{grid-template-columns:1fr;margin:60px 16px}
@@ -545,6 +551,8 @@ footer{border-top:1px solid var(--line);padding:56px 36px 36px;max-width:1480px;
   .pledge{grid-template-columns:36px 1fr;gap:14px;padding:18px 0}
   .pledge-title{font-size:18px}
   .pledge-body{font-size:13.5px}
+  .planet-stats{grid-template-columns:1fr;gap:12px}
+  .pbadge{grid-column:1;flex-direction:column;gap:10px}
   .vibes{grid-template-columns:1fr 1fr;grid-auto-rows:160px;gap:12px}
   .v1,.v6{grid-column:span 2;grid-row:span 2;grid-auto-rows:auto}
   .v2,.v3,.v4,.v5{grid-column:span 1}
@@ -987,11 +995,11 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--blue);outline-offse
         <img src="assets/products/sip-stack-light.png" alt="SIP single-serve sealed cup water" loading="lazy"/>
       </div>
       <div class="p-info">
-        <div class="p-meta"><span>250ml · Sealed cup</span><span>QR-traceable</span></div>
+        <div class="p-meta"><span>250ml · Sealed cup</span><span>Stackable</span></div>
         <h3 class="p-h">The Cup That Goes Everywhere.</h3>
-        <p class="p-desc">Peel-and-drink cup water for events, hospitals, mosques, weddings. Each batch is QR-traceable. Fully sealed, fully stackable.</p>
+        <p class="p-desc">Peel-and-drink cup water for events, hospitals, mosques, weddings. Fully sealed. Fully stackable. Built for the moments water shouldn't go missing.</p>
         <div class="p-chips">
-          <span class="chip"><i></i> QR-traceable</span>
+          <span class="chip"><i></i> Sealed</span>
           <span class="chip"><i></i> Stackable</span>
         </div>
         <div class="p-moment"><i></i> For crowds, kids, ceremonies, care</div>
@@ -1064,24 +1072,22 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--blue);outline-offse
       </div>
     </article>
 
-    <!-- 07 · SIP Bottles — the honest plastic confession -->
+    <!-- 07 · SIP Bottles — for the plastic fans -->
     <article class="p-aside">
       <div class="p-aside-copy">
-        <div class="p-aside-tag"><i></i> 07 / SIP Bottles · You asked. We caved.</div>
-        <h3 class="p-aside-h">Ugh. Fine.<br/>The <span class="strike">eco-friendly</span> plastic ones.</h3>
-        <p>You wanted plastic. You got plastic. Same Dhaka water. Same QR-traced batch. We're not gonna lecture you. Habits are hard.</p>
+        <div class="p-aside-tag"><i></i> 07 / SIP Bottles · The unc choice</div>
+        <h3 class="p-aside-h">Ugh. Fine.<br/>For the <span class="strike">loyal</span> Plastic Fans.</h3>
+        <p>For those who still want plastic, we got an unc choice for the dinosaurs. We're not gonna lecture you. Habits are hard. But we're hopeful you'll balance this plastic out somehow. Or we will. We've got you, friend.</p>
         <div class="p-aside-meta">
           <span>500ml + 350ml</span>
           <span class="sep">·</span>
           <span>Recyclable</span>
           <span class="sep">·</span>
-          <span>Hopefully temporary</span>
-          <span class="sep">·</span>
-          <a href="#range">Glass is over there →</a>
+          <a href="#range">Switch to glass when you're ready →</a>
         </div>
       </div>
       <div class="p-aside-photo">
-        <img src="assets/products/sip-bottles.png" alt="SIP plastic bottles — the transition product" loading="lazy"/>
+        <img src="assets/products/sip-bottles.png" alt="SIP recycled bottled water — for the plastic fans" loading="lazy"/>
       </div>
     </article>
 
@@ -1231,7 +1237,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--blue);outline-offse
     <div class="eyebrow"><span class="dot" style="background:#7da4ff"></span> A new format. By THC.</div>
     <img src="assets/brand/logo-sip.png" alt="SIP" style="height:84px;width:auto;display:block;margin-bottom:18px;filter:drop-shadow(0 6px 18px rgba(45,105,255,.35))"/>
     <h3 class="sip-h reveal">Water<br/>in a <span class="accent">cup.</span></h3>
-    <p class="sip-p">Single-serve sealed cups for events, hospitals, mosques, weddings. Peel. Drink. Recycle. Every batch QR-traced. We're accountable for every cup we ship.</p>
+    <p class="sip-p">Single-serve sealed cups for events, hospitals, mosques, weddings. Peel. Drink. Recycle. We're accountable for every cup we ship.</p>
     <div class="sip-row">
       <a class="sip-a1" href="#">Explore SIP
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
