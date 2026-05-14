@@ -1,0 +1,1306 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>The Hydration Company — Drink Different. Do More.</title>
+<meta name="description" content="Premium water and performance beverages designed for the way Bangladesh actually moves. Glass-first, plastic-neutral by 2027." />
+<meta name="theme-color" content="#050545" />
+<link rel="icon" type="image/png" href="assets/brand/logo-thc-blue.png" />
+<link rel="apple-touch-icon" href="assets/brand/logo-thc-blue.png" />
+<!-- Social / OG -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="The Hydration Company — Drink Different. Do More." />
+<meta property="og:description" content="Premium water and performance beverages, designed in Dhaka. Plastic neutral by 2027." />
+<meta property="og:image" content="assets/brand/logo-thc-blue.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="The Hydration Company" />
+<meta name="twitter:description" content="Drink Different. Do More. Plastic neutral by 2027." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  /* OFFICIAL THC PALETTE
+     Blue system: main brand, hero, products
+     Green system: sustainability, impact, cleanups
+     White / Light Blue: product detail, trust */
+  --blue:#2D69FF;          /* Electric Tide */
+  --blue-deep:#050545;     /* Midnight Indigo */
+  --blue-ink:#020325;      /* Deeper indigo for tickers */
+  --blue-soft:#E0F0FF;     /* Cloud Drift */
+  --green:#4AA97D;         /* Fresh Mint */
+  --green-deep:#014538;    /* Deep Grove */
+  --green-soft:#DDFFEF;    /* Coastal Pine */
+  --ink:#0C0C08;           /* Kinda Black */
+  --white:#FFFFFF;         /* Just White */
+  --paper:#F7FAFE;
+  --paper-warm:#EEF4FB;
+  --line:rgba(5,5,69,.12); --line-soft:rgba(5,5,69,.06);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+html,body{background:var(--paper);color:var(--ink);font-family:"Archivo",sans-serif;-webkit-font-smoothing:antialiased}
+body{overflow-x:hidden;position:relative}
+/* sticky-nav offset for jump links */
+section[id], header[id], div[id]{scroll-margin-top:88px}
+/* responsive image defaults */
+img{max-width:100%;height:auto;display:block}
+/* reduced motion */
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}
+  body::before{display:none}
+}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.035;mix-blend-mode:multiply;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .8 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+nav,.hero,.impact-bar,.wordstrip,.sec,.sec-sm,.planet,.connect,.sip,.footer-cta,footer{position:relative;z-index:2}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+::selection{background:var(--blue);color:#fff}
+
+/* TICKER */
+.ticker{background:var(--blue-ink);color:#cfd8ff;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:9px 0;overflow:hidden}
+.ticker-track{display:flex;gap:42px;white-space:nowrap;animation:tick 42s linear infinite;width:max-content}
+.ticker-track span{display:inline-flex;align-items:center;gap:14px}
+.ticker-track i{display:inline-block;width:6px;height:6px;background:var(--blue);border-radius:50%;font-style:normal}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:50;background:rgba(244,247,251,.82);backdrop-filter:blur(16px);border-bottom:1px solid var(--line-soft)}
+.nav-inner{max-width:1480px;margin:0 auto;padding:16px 36px;display:flex;align-items:center;justify-content:space-between;gap:32px}
+.logo-mark{display:flex;align-items:center;gap:12px}
+.logo-mark img{height:30px;width:auto;display:block}
+.logo-mark .lockup{font-family:"Archivo Black",sans-serif;font-size:11px;line-height:.92;text-transform:uppercase;color:var(--blue)}
+.nav-links{display:flex;gap:28px;font-size:13px;font-weight:500}
+.nav-links a{position:relative;padding:5px 0}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-cta{display:flex;align-items:center;gap:10px}
+.pill{background:var(--ink);color:var(--paper);padding:10px 18px;border-radius:999px;font-weight:600;font-size:13px;display:inline-flex;align-items:center;gap:9px;transition:transform .25s,background .25s}
+.pill:hover{transform:translateY(-1px);background:var(--blue)}
+.pill svg{width:13px;height:13px}
+.pill-out{background:transparent;color:var(--ink);border:1.5px solid var(--line);padding:9px 16px;border-radius:999px;font-weight:600;font-size:13px;display:inline-flex;align-items:center;gap:9px;transition:border-color .25s}
+.pill-out:hover{border-color:var(--ink)}
+
+/* HERO */
+.hero{position:relative;padding:60px 36px 0;max-width:1480px;margin:0 auto;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:end;min-height:82vh}
+.hero-copy{padding-bottom:48px;z-index:2}
+.eyebrow{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue);display:flex;align-items:center;gap:12px;margin-bottom:28px}
+.dot{width:8px;height:8px;border-radius:50%;display:inline-block;animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.85)}}
+h1.display{font-family:"Archivo Black",sans-serif;font-size:clamp(56px,9.6vw,168px);line-height:.86;letter-spacing:-.036em;text-transform:uppercase}
+h1.display .blue{color:var(--blue)}
+h1.display .green{color:var(--green)}
+h1.display .out{-webkit-text-stroke:2px var(--ink);color:transparent}
+h1.display em{font-style:normal;display:block;margin-top:-.04em}
+.lede{margin-top:34px;max-width:560px;font-size:18px;line-height:1.55;color:#2a3252}
+.hero-actions{display:flex;align-items:center;gap:16px;margin-top:34px;flex-wrap:wrap}
+.btn{padding:15px 26px;border-radius:999px;font-family:"Archivo Black",sans-serif;text-transform:uppercase;letter-spacing:.04em;display:inline-flex;align-items:center;gap:10px;font-size:12.5px;border:none;cursor:pointer;transition:transform .25s,box-shadow .25s,background .25s;position:relative;overflow:hidden}
+.btn::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.18) 50%,transparent 70%);transform:translateX(-120%);transition:transform .8s}
+.btn:hover::after{transform:translateX(120%)}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-blue:hover{transform:translateY(-2px);box-shadow:0 18px 40px -16px rgba(45,105,255,.55)}
+.btn-green{background:var(--green);color:#fff}
+.btn-green:hover{transform:translateY(-2px);box-shadow:0 18px 40px -16px rgba(74,169,125,.55)}
+.btn-ghost{background:none;border:0;border-bottom:1.5px solid currentColor;padding:13px 4px;font-family:"Archivo Black",sans-serif;text-transform:uppercase;letter-spacing:.06em;font-size:12px;display:inline-flex;align-items:center;gap:10px;cursor:pointer}
+.btn-ghost svg{width:14px;height:14px;transition:transform .3s}
+.btn-ghost:hover svg{transform:translateX(4px)}
+
+.hero-image{position:relative;height:82vh;min-height:600px;display:flex;align-items:center;justify-content:center;padding:24px 0}
+.hero-card{position:relative;width:100%;height:100%;border-radius:28px;overflow:hidden;background:linear-gradient(135deg,#E0F0FF 0%,#cfdcff 60%,#B8CCFF 100%);box-shadow:0 50px 80px -40px rgba(5,5,69,.32),0 0 0 1px rgba(255,255,255,.4) inset;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.hero-card:hover{transform:translateY(-6px)}
+.hero-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.hero-chip{position:absolute;z-index:3;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border:1px solid rgba(5,5,69,.08);padding:9px 14px;border-radius:999px;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);font-weight:500}
+.hero-chip.top-left{top:22px;left:22px}
+.hero-chip.top-right{top:22px;right:22px;color:var(--blue-deep)}
+.hero-tag{position:absolute;z-index:3;left:22px;bottom:22px;background:var(--blue-deep);color:#fff;padding:18px 22px;border-radius:18px;max-width:280px;box-shadow:0 18px 40px -12px rgba(5,5,69,.4)}
+.hero-tag strong{font-family:"Archivo Black",sans-serif;font-size:15px;color:#7FE3B0;display:block;margin-bottom:4px;text-transform:uppercase;letter-spacing:-.01em}
+.hero-tag span{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#cfd8ff;line-height:1.5}
+
+/* IMPACT BAR */
+.impact-bar{max-width:1480px;margin:0 auto;padding:0 36px;border-top:1px solid var(--line-soft)}
+.impact-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--blue-deep);border-radius:0;overflow:hidden}
+.impact-cell{background:var(--blue-soft);padding:30px 28px;display:flex;flex-direction:column;gap:6px;color:var(--blue-deep)}
+.impact-cell .impact-num{color:var(--blue-deep)}
+.impact-cell .impact-num.c-blue{color:var(--blue)}
+.impact-cell .impact-num.c-green{color:var(--green-deep)}
+.impact-cell .impact-label{color:#42476a}
+.impact-num{font-family:"Archivo Black",sans-serif;font-size:clamp(26px,3.2vw,46px);letter-spacing:-.03em}
+.impact-label{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;color:#5b6582}
+
+/* WORDSTRIP */
+.wordstrip{padding:34px 0 8px;overflow:hidden;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);background:var(--paper-warm)}
+.ws-track{display:flex;gap:60px;align-items:center;animation:tick 52s linear infinite;width:max-content;white-space:nowrap}
+.ws-word{font-family:"Archivo Black",sans-serif;font-size:96px;letter-spacing:-.04em;color:var(--ink);text-transform:uppercase;display:inline-flex;align-items:center;gap:60px}
+.ws-out{-webkit-text-stroke:1.5px var(--ink);color:transparent}
+.ws-drop{width:44px;height:44px;flex:none;fill:var(--blue)}
+
+/* LAYOUT UTIL */
+.sec{padding:120px 36px 80px;max-width:1480px;margin:0 auto}
+.sec-sm{padding:80px 36px 60px;max-width:1480px;margin:0 auto}
+.meta-lbl{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#5b6582;margin-bottom:14px;display:flex;gap:14px;align-items:center}
+.meta-lbl i{display:inline-block;width:24px;height:1px;background:#5b6582;font-style:normal}
+.sh{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:80px}
+.sh h2{font-family:"Archivo Black",sans-serif;font-size:clamp(40px,5.8vw,96px);line-height:.9;letter-spacing:-.035em;text-transform:uppercase}
+.sh h2 em{font-style:normal}
+.sh p{font-size:17px;line-height:1.6;color:#374063;max-width:480px;margin-left:auto}
+.c-blue{color:var(--blue)}
+.c-green{color:var(--green)}
+.c-out{-webkit-text-stroke:2px var(--ink);color:transparent}
+
+/* STORY */
+.story-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:80px;align-items:center}
+.story-h{font-family:"Archivo Black",sans-serif;font-size:clamp(48px,6.8vw,120px);line-height:.86;letter-spacing:-.04em;text-transform:uppercase}
+.story-body{font-size:18px;line-height:1.65;color:#283050;display:grid;gap:22px;margin-top:36px}
+.story-body p:first-of-type::first-letter{font-family:"Archivo Black",sans-serif;font-size:80px;float:left;line-height:.82;margin:8px 14px 0 0;color:var(--blue)}
+.signoff{margin-top:16px;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#5b6582;display:flex;gap:14px;align-items:center}
+.signoff i{width:24px;height:1px;background:#5b6582;font-style:normal;display:inline-block}
+.story-img{position:relative;border-radius:24px;overflow:hidden;background:#eef5ff;aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;border:1px solid var(--line-soft)}
+.story-img img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;display:block}
+.story-img-tag{position:absolute;top:22px;left:22px;z-index:3;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);display:flex;gap:8px;align-items:center;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);padding:8px 14px;border-radius:999px;border:1px solid var(--line-soft)}
+.story-img-tag i{width:6px;height:6px;background:var(--blue);border-radius:50%;font-style:normal;display:inline-block}
+.story-corner{position:absolute;bottom:22px;right:22px;z-index:3;font-family:"Archivo Black",sans-serif;font-size:13px;color:var(--blue-deep);text-transform:uppercase;letter-spacing:.02em;text-align:right;line-height:1;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);padding:10px 14px;border-radius:14px;border:1px solid var(--line-soft)}
+
+/* DIFFERENT */
+.diff-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.diff-cell{background:var(--paper);padding:34px 28px 38px;display:flex;flex-direction:column;gap:13px;min-height:300px;transition:background .35s}
+.diff-cell:hover{background:#fff}
+.diff-num{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.16em;color:var(--blue)}
+.diff-icon{width:30px;height:30px;color:var(--blue)}
+.diff-cell h4{font-family:"Archivo Black",sans-serif;font-size:25px;line-height:.96;letter-spacing:-.015em;text-transform:uppercase;margin-top:auto}
+.diff-cell p{font-size:14px;line-height:1.55;color:#374063}
+
+/* PRODUCTS */
+.products{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
+.product{border-radius:24px;overflow:hidden;border:1px solid var(--line-soft);transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s;cursor:pointer}
+.product:hover{transform:translateY(-5px);box-shadow:0 30px 60px -30px rgba(10,26,63,.25)}
+.p-luxury{grid-column:span 7;background:linear-gradient(155deg,#0A1A3F,#03081C);color:#dfe6ff}
+.p-premium{grid-column:span 5;background:linear-gradient(162deg,#1E5BFF,#0F39B8);color:#fff}
+.p-sip{grid-column:span 4;background:linear-gradient(158deg,#0a1f4d,#050545);color:#dfe6ff}
+.p-thce{grid-column:span 4;background:linear-gradient(158deg,#0d1f0f,#1a3320);color:#d4f0e4}
+.p-protein{grid-column:span 4;background:linear-gradient(158deg,#1a0a2e,#2a0f4a);color:#e8d8ff}
+.p-soon{grid-column:span 12;background:var(--paper-warm);color:var(--ink);border:2px dashed var(--line)}
+.p-meta{display:flex;justify-content:space-between;align-items:center;padding:22px 26px;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.7}
+.p-sip .p-meta{opacity:.7;color:#bcd2ff}
+.p-body{padding:0 26px 30px;display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:end;min-height:460px}
+.p-tall .p-body{min-height:540px}
+.p-text{align-self:end}
+.p-h{font-family:"Archivo Black",sans-serif;font-size:clamp(30px,3.2vw,50px);line-height:.92;letter-spacing:-.02em;text-transform:uppercase;margin-bottom:12px}
+.p-desc{font-size:14.5px;line-height:1.5;opacity:.8;max-width:340px;margin-bottom:13px}
+.chip{display:inline-flex;align-items:center;gap:7px;padding:7px 13px;border:1px solid currentColor;border-radius:999px;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;opacity:.85;margin-right:5px;margin-bottom:5px}
+.chip i{width:4px;height:4px;background:currentColor;border-radius:50%;font-style:normal}
+.p-moment{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;opacity:.65;margin-top:16px;display:flex;align-items:center;gap:8px}
+.p-moment i{width:4px;height:4px;background:currentColor;border-radius:50%;font-style:normal;display:inline-block}
+.p-img{align-self:end;text-align:center}
+.p-img img{margin-left:auto;max-height:420px;width:auto;object-fit:contain;filter:drop-shadow(0 20px 36px rgba(0,0,0,.38))}
+.p-sip .p-img{display:flex;align-items:flex-end;justify-content:center}
+.p-sip .p-img img{margin-left:0;max-height:340px}
+
+/* ============================================================
+   EDITORIAL PRODUCT CARD SYSTEM
+   Photo-led, magazine-style — designed for scene photography
+   ============================================================ */
+.p-card{
+  background:#fff;border-radius:24px;border:1px solid var(--line-soft);
+  display:flex;flex-direction:column;overflow:hidden;
+  transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s,border-color .35s;
+  cursor:pointer;
+}
+.p-card:hover{transform:translateY(-5px);box-shadow:0 30px 60px -28px rgba(5,5,69,.18);border-color:rgba(45,105,255,.25)}
+.p-card .p-photo{position:relative;aspect-ratio:5/4;overflow:hidden;background:#f0f4fa}
+.p-card .p-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s ease}
+.p-card:hover .p-photo img{transform:scale(1.04)}
+.p-card .p-info{padding:30px 28px 32px;display:flex;flex-direction:column;gap:14px;flex:1}
+.p-card .p-meta{display:flex;justify-content:space-between;align-items:center;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#5b6582;padding:0;opacity:1;gap:10px}
+.p-card .p-h{font-family:"Archivo Black",sans-serif;font-size:clamp(26px,2.4vw,36px);line-height:.94;letter-spacing:-.02em;text-transform:uppercase;color:var(--blue-deep);margin:0}
+.p-card .p-desc{font-size:14.5px;line-height:1.55;color:#374063;max-width:none;margin:0;opacity:1}
+.p-card .p-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
+.p-card .p-chips .chip{margin:0;color:var(--blue-deep);border-color:rgba(5,5,69,.22);opacity:.92}
+.p-card .p-moment{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#5b6582;display:flex;align-items:center;gap:8px;margin-top:4px;opacity:1}
+.p-card .p-moment i{width:5px;height:5px;background:var(--blue);border-radius:50%;font-style:normal;display:inline-block}
+.p-card .p-tag{position:absolute;top:14px;left:14px;z-index:2;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border:1px solid var(--line-soft);padding:7px 13px;border-radius:999px;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);font-weight:500}
+.p-card .p-badge{position:absolute;top:14px;right:14px;z-index:2;background:var(--blue);color:#fff;padding:7px 13px;border-radius:999px;font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;box-shadow:0 8px 20px -8px rgba(45,105,255,.5)}
+
+/* Dark variant — for products with intentionally dark photography (THCE) */
+.p-card.dark{background:linear-gradient(158deg,#0d1f0f,#1a3320);border-color:rgba(127,237,176,.18);color:#d4f0e4}
+.p-card.dark .p-h{color:#fff}
+.p-card.dark .p-meta{color:#7FE3B0}
+.p-card.dark .p-desc{color:#c8eed7}
+.p-card.dark .p-chips .chip{color:#7FE3B0;border-color:rgba(127,237,176,.4)}
+.p-card.dark .p-moment{color:#7FE3B0}
+.p-card.dark .p-tag{background:rgba(0,0,0,.6);color:#7FE3B0;border-color:rgba(127,237,176,.25)}
+.p-card.dark .p-photo{background:#0a1410}
+.p-card.dark .p-badge{background:#7FE3B0;color:#0d1f0f;box-shadow:0 8px 20px -8px rgba(127,237,176,.55)}
+
+/* Wellness Water — full-width functional hero */
+.p-functional{grid-column:span 12;display:grid;grid-template-columns:1.15fr 1fr;background:linear-gradient(135deg,#E0F0FF 0%,#DDFFEF 100%);border-radius:28px;overflow:hidden;border:1px solid var(--line-soft);min-height:480px;position:relative}
+.p-functional .p-fn-photo{position:relative;overflow:hidden;background:#eef5ff}
+.p-functional .p-fn-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s ease}
+.p-functional:hover .p-fn-photo img{transform:scale(1.03)}
+.p-functional .p-fn-copy{padding:56px 52px;display:flex;flex-direction:column;justify-content:center;gap:18px}
+.p-functional .p-fn-copy .p-meta{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);display:flex;justify-content:space-between;gap:12px}
+.p-functional .p-fn-copy h3{font-family:"Archivo Black",sans-serif;font-size:clamp(34px,3.6vw,56px);line-height:.94;letter-spacing:-.025em;text-transform:uppercase;color:var(--blue-deep);margin:0}
+.p-functional .p-fn-copy h3 .accent{color:var(--blue)}
+.p-functional .p-fn-copy p{font-size:15.5px;line-height:1.6;color:#283050;max-width:480px;margin:0}
+.p-functional .p-fn-variants{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.p-functional .p-fn-variant{padding:16px 14px;border-radius:14px;background:rgba(255,255,255,.65);backdrop-filter:blur(6px);border:1px solid rgba(45,105,255,.14);transition:transform .3s,background .3s}
+.p-functional .p-fn-variant:hover{transform:translateY(-2px);background:rgba(255,255,255,.85)}
+.p-functional .p-fn-variant .v-tag{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:6px}
+.p-functional .p-fn-variant .v-name{font-family:"Archivo Black",sans-serif;font-size:14px;line-height:1.05;text-transform:uppercase;letter-spacing:-.005em;color:var(--blue-deep)}
+.p-functional .p-fn-tag{position:absolute;top:18px;left:18px;z-index:2;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border:1px solid var(--line-soft);padding:8px 14px;border-radius:999px;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);font-weight:500}
+
+/* PRODUCT GRID RESPONSIVE: clean breakpoints so cards never squeeze too small */
+@media (max-width:1280px) and (min-width:1025px){
+  .products{grid-template-columns:repeat(6,1fr)}
+  .products > article[style*="span 7"]{grid-column:span 4 !important}
+  .products > article[style*="span 5"]{grid-column:span 2 !important}
+  .products > article[style*="span 4"]{grid-column:span 2 !important}
+  .p-functional{grid-column:1 / -1 !important}
+}
+@media (max-width:1024px){
+  .products{grid-template-columns:repeat(2,1fr) !important;gap:18px !important}
+  .products > article[style]{grid-column:span 1 !important}
+  .p-functional{grid-column:1 / -1 !important;grid-template-columns:1fr;min-height:auto}
+  .p-functional .p-fn-photo{aspect-ratio:5/4}
+  .p-functional .p-fn-copy{padding:36px 28px}
+}
+@media (max-width:640px){
+  .products{grid-template-columns:1fr !important}
+  .products > article[style]{grid-column:1 / -1 !important}
+  .p-card .p-info{padding:24px 22px 26px;gap:12px}
+  .p-card .p-h{font-size:clamp(22px,5.5vw,30px)}
+  .p-card .p-desc{font-size:13.5px}
+  .p-functional .p-fn-copy{padding:32px 22px;gap:14px}
+  .p-functional .p-fn-copy h3{font-size:clamp(28px,7vw,42px)}
+  .p-functional .p-fn-variants{gap:8px}
+  .p-functional .p-fn-variant{padding:12px 10px}
+}
+.p-sip .p-img img{filter:drop-shadow(0 18px 36px rgba(0,0,0,.5))}
+.p-coming{display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border-radius:999px;border:1.5px solid currentColor;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;opacity:.75;margin-top:14px}
+.p-coming i{width:6px;height:6px;background:currentColor;border-radius:50%;animation:pulse 2s infinite;font-style:normal;display:inline-block}
+.p-soon-body{padding:30px 26px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.soon-card{padding:24px;border-radius:16px;border:1px solid var(--line-soft);background:#fff;display:flex;flex-direction:column;gap:9px}
+.soon-tag{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.soon-h{font-family:"Archivo Black",sans-serif;font-size:20px;line-height:.96;text-transform:uppercase;letter-spacing:-.01em}
+.soon-p{font-size:13.5px;line-height:1.5;color:#374063}
+.soon-dot{display:flex;align-items:center;gap:6px;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#5b6582;margin-top:auto}
+.soon-dot i{width:6px;height:6px;border-radius:50%;border:1.5px solid #5b6582;font-style:normal;display:inline-block}
+
+/* PLANET */
+.planet{margin:80px 36px;max-width:1480px;margin-left:auto;margin-right:auto;background:var(--green-deep);color:#fff;border-radius:32px;overflow:hidden;position:relative}
+.planet::before{content:"";position:absolute;inset:0;background:radial-gradient(55% 70% at 80% 50%,rgba(31,168,106,.35),transparent 65%)}
+.planet-grid{position:relative;z-index:2;padding:80px 64px;display:grid;grid-template-columns:1.1fr 1fr;gap:70px;align-items:start}
+.planet-h{font-family:"Archivo Black",sans-serif;font-size:clamp(48px,6.5vw,106px);line-height:.86;letter-spacing:-.035em;text-transform:uppercase}
+.planet-h .stroke{-webkit-text-stroke:2px #fff;color:transparent}
+.planet-h .lime{color:#7FE3B0}
+.planet-intro{font-size:18px;line-height:1.55;color:#c8eed7;margin-top:28px;max-width:520px}
+.pledges{margin-top:42px;display:grid;gap:0}
+.pledge{display:grid;grid-template-columns:48px 1fr;gap:18px;padding:20px 0;border-top:1px solid rgba(255,255,255,.15)}
+.pledge:last-child{border-bottom:1px solid rgba(255,255,255,.15)}
+.pledge-n{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.14em;color:#7FE3B0;padding-top:3px}
+.pledge-title{font-family:"Archivo Black",sans-serif;font-size:20px;line-height:.96;text-transform:uppercase;letter-spacing:-.01em}
+.pledge-body{font-size:14px;line-height:1.55;color:#c8eed7;margin-top:6px;max-width:440px}
+.planet-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pstat{border:1px solid rgba(255,255,255,.2);border-radius:18px;padding:26px 22px}
+.pstat .big{font-family:"Archivo Black",sans-serif;font-size:50px;line-height:.9;letter-spacing:-.03em;color:#7FE3B0}
+.pstat .big.sm{font-size:34px;color:#fff}
+.pstat .desc{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#c8eed7;margin-top:10px}
+.pbadge{grid-column:span 2;border:1px solid rgba(255,255,255,.2);border-radius:18px;padding:22px;display:flex;align-items:flex-start;gap:16px}
+.pbadge svg{width:28px;height:28px;color:#7FE3B0;flex:none;margin-top:2px}
+.pbadge p{font-size:14px;line-height:1.5;color:#c8eed7}
+.pbadge p strong{font-family:"Archivo Black",sans-serif;font-size:15px;color:#fff;display:block;margin-bottom:4px;text-transform:uppercase;letter-spacing:-.01em}
+
+/* CULTURE */
+.vibes{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:200px;gap:16px;margin-top:20px}
+.vibe{position:relative;border-radius:20px;overflow:hidden;background:var(--blue-deep);color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:20px;transition:transform .4s}
+.vibe:hover{transform:translateY(-4px)}
+.vibe::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(0,0,0,.6))}
+.vibe>*{position:relative;z-index:2}
+.vibe-tag{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;opacity:.75;margin-bottom:5px}
+.vibe h5{font-family:"Archivo Black",sans-serif;font-size:21px;line-height:.96;letter-spacing:-.01em;text-transform:uppercase}
+.v1{grid-column:span 5;grid-row:span 2;background:url('assets/lifestyle-elevated.png') center/cover}
+.v2{grid-column:span 4;background:linear-gradient(155deg,#1E5BFF,#0a1a3f)}
+.v3{grid-column:span 3;background:#fff;color:var(--ink)}
+.v3::after{display:none}
+.v4{grid-column:span 3;background:url('assets/sip-cups.png') center/cover}
+.v5{grid-column:span 4;background:linear-gradient(162deg,#0D3D28,#1a5c3a);justify-content:space-between;padding:24px}
+.v5::after{display:none}
+.v5 .v5-stat{font-family:"Archivo Black",sans-serif;font-size:78px;line-height:.84;letter-spacing:-.04em;color:#7FE3B0;margin-top:auto}
+.v5 .v5-sub{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#c8eed7;margin-top:8px;line-height:1.5}
+.v6{grid-column:span 5;background:#0a1330 url('assets/products/can-trio.png') center/cover}
+.v3 .quote{font-family:"Archivo Black",sans-serif;font-size:26px;line-height:.95;letter-spacing:-.02em;text-transform:uppercase;color:var(--ink)}
+.v3 .vibe-tag{color:#5b6582;opacity:1}
+
+/* BELIEFS */
+.beliefs-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.beliefs-h{font-family:"Archivo Black",sans-serif;font-size:clamp(36px,4.4vw,72px);line-height:.92;letter-spacing:-.03em;text-transform:uppercase}
+.beliefs-intro{font-size:17px;line-height:1.6;color:#374063;margin-top:20px;max-width:440px}
+.beliefs-list{display:grid;gap:0}
+.b-item{display:grid;grid-template-columns:54px 1fr;gap:20px;padding:24px 0;border-top:1px solid var(--line-soft);transition:padding .35s}
+.b-item:last-child{border-bottom:1px solid var(--line-soft)}
+.b-item:hover{padding-left:8px}
+.b-num{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.14em;color:#5b6582;padding-top:3px}
+.b-name{font-family:"Archivo Black",sans-serif;font-size:21px;letter-spacing:-.015em;text-transform:uppercase}
+.b-name span{display:block;font-family:"Archivo",sans-serif;font-weight:400;font-size:14px;letter-spacing:0;text-transform:none;color:#5b6582;margin-top:5px;line-height:1.55;max-width:500px}
+
+/* CONNECT */
+.connect{margin:80px 36px;max-width:1480px;margin-left:auto;margin-right:auto;background:var(--blue);color:#fff;border-radius:32px;padding:80px 64px;position:relative;overflow:hidden}
+.connect::before{content:"";position:absolute;right:-100px;bottom:-180px;width:520px;height:520px;background:radial-gradient(circle,rgba(255,255,255,.15),transparent 60%);border-radius:50%}
+.connect-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center;position:relative;z-index:2}
+.connect-h{font-family:"Archivo Black",sans-serif;font-size:clamp(44px,6.2vw,102px);line-height:.86;letter-spacing:-.035em;text-transform:uppercase}
+.connect-h .stroke{-webkit-text-stroke:2px #fff;color:transparent}
+.connect-sub{font-size:17px;line-height:1.55;margin-top:26px;color:#dfe6ff;max-width:500px}
+.signup{margin-top:34px;display:flex;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);padding:7px;border-radius:999px;max-width:480px;backdrop-filter:blur(6px)}
+.signup input{flex:1;background:transparent;border:0;outline:0;color:#fff;padding:0 16px;font:500 14px/1 "Archivo",sans-serif}
+.signup input::placeholder{color:rgba(255,255,255,.5)}
+.signup button{background:#fff;color:var(--blue);border:0;padding:12px 18px;border-radius:999px;font-weight:700;font-size:13px;cursor:pointer;display:inline-flex;align-items:center;gap:7px;transition:background .25s,color .25s;white-space:nowrap}
+.signup button:hover{background:var(--ink);color:#fff}
+.perks{margin-top:24px;display:flex;flex-wrap:wrap;gap:16px;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#cfd8ff}
+.perks span{display:flex;align-items:center;gap:7px}
+.perks i{width:4px;height:4px;background:#fff;border-radius:50%;font-style:normal;display:inline-block}
+.connect-visual{position:relative;height:480px;border-radius:24px;overflow:hidden;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18)}
+.connect-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.connect-chip{position:absolute;z-index:3;top:18px;left:18px;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);color:var(--blue-deep);padding:9px 14px;border-radius:999px;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:500}
+.c-stamp{display:none}
+
+/* SIP */
+.sip{margin:80px 36px;max-width:1480px;margin-left:auto;margin-right:auto;background:#0a1330;color:#fff;border-radius:32px;overflow:hidden;position:relative;display:grid;grid-template-columns:1fr 1fr;align-items:center}
+.sip::before{content:"";position:absolute;inset:0;background:radial-gradient(50% 80% at 30% 50%,rgba(30,91,255,.38),transparent 60%)}
+.sip-copy{position:relative;z-index:2;padding:80px 64px}
+.sip-copy .eyebrow{color:#7da4ff;margin-bottom:22px}
+.sip-h{font-family:"Archivo Black",sans-serif;font-size:clamp(40px,5.5vw,82px);line-height:.88;letter-spacing:-.03em;text-transform:uppercase}
+.sip-h .accent{color:#7da4ff}
+.sip-p{font-size:17px;line-height:1.55;color:#b8c4e8;margin-top:24px;max-width:430px}
+.sip-row{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+.sip-row a{padding:12px 20px;border-radius:999px;font-size:13px;font-weight:600;display:inline-flex;align-items:center;gap:9px}
+.sip-a1{background:#fff;color:#0a1330}
+.sip-a2{border:1px solid rgba(255,255,255,.28);color:#fff}
+.sip-img{position:relative;z-index:2;height:520px;background:url('assets/products/sip-stack-light.png') center/cover no-repeat;border-radius:0 32px 32px 0}
+
+/* FOOTER CTA */
+.footer-cta{padding:120px 36px 60px;max-width:1480px;margin:0 auto;text-align:center}
+.footer-cta h2{font-family:"Archivo Black",sans-serif;font-size:clamp(64px,12vw,210px);line-height:.84;letter-spacing:-.04em;text-transform:uppercase}
+.footer-cta .sub{font-size:18px;color:#374063;margin-top:30px;max-width:560px;margin-left:auto;margin-right:auto;line-height:1.55}
+.footer-cta .row{display:flex;gap:14px;justify-content:center;margin-top:38px;flex-wrap:wrap}
+
+footer{border-top:1px solid var(--line);padding:56px 36px 36px;max-width:1480px;margin:80px auto 0}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;margin-bottom:60px}
+.foot-brand{font-family:"Archivo Black",sans-serif;font-size:14px;color:var(--blue);text-transform:uppercase;line-height:.95}
+.foot-brand p{font-family:"Archivo",sans-serif;font-weight:400;font-size:13px;color:#5b6582;text-transform:none;letter-spacing:0;margin-top:14px;max-width:300px;line-height:1.55}
+.foot-grid h4{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#5b6582;margin-bottom:14px;font-weight:500}
+.foot-grid ul{list-style:none;display:grid;gap:10px;font-size:14px}
+.foot-grid ul a:hover{color:var(--blue)}
+.foot-mark{display:flex;justify-content:center;align-items:center;margin:40px 0 36px;padding:20px 0}
+.foot-mark img{max-width:min(960px,95%);height:auto;display:block;filter:drop-shadow(0 8px 24px rgba(45,105,255,.18))}
+.foot-bot{display:flex;justify-content:space-between;align-items:center;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#5b6582;padding-top:22px;border-top:1px solid var(--line-soft)}
+.foot-bot a:hover{color:var(--ink)}
+.foot-green{display:flex;align-items:center;gap:8px;color:var(--green)}
+.foot-green i{width:6px;height:6px;background:var(--green);border-radius:50%;font-style:normal;display:inline-block}
+
+/* RESPONSIVE */
+@media (max-width:1024px){
+  .nav-links{display:none}
+  .hero-grid,.story-grid,.connect-grid{grid-template-columns:1fr;gap:30px;min-height:auto}
+  .hero-image{height:52vh;min-height:0}
+  .sh{grid-template-columns:1fr;gap:22px}
+  .sh p{margin-left:0}
+  .products{grid-template-columns:1fr 1fr}
+  .p-luxury,.p-premium,.p-sip,.p-thce,.p-protein,.p-soon{grid-column:span 2}
+  .p-soon-body{grid-template-columns:1fr;gap:12px}
+  .planet-grid{grid-template-columns:1fr;gap:40px;padding:48px 28px}
+  .planet-stats,.pbadge{display:none}
+  .connect{margin:60px 16px;padding:48px 28px}
+  .connect-visual{height:320px}
+  .sip{grid-template-columns:1fr;margin:60px 16px}
+  .sip-img{height:280px;border-radius:0 0 32px 32px}
+  .sip-copy{padding:48px 28px}
+  .diff-grid{grid-template-columns:1fr 1fr}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:26px}
+  .foot-mark{font-size:72px}
+  .impact-inner{grid-template-columns:1fr 1fr}
+  .ws-word{font-size:56px}
+  .vibes{grid-template-columns:repeat(6,1fr)}
+  .v1,.v6{grid-column:span 6;grid-row:span 1}
+  .v2,.v3,.v4,.v5{grid-column:span 3}
+  .p-body{grid-template-columns:1fr;min-height:auto}
+  .p-img img{max-height:280px;margin:0 auto}
+  .beliefs-grid{grid-template-columns:1fr;gap:30px}
+}
+
+/* ============================================================
+   PRECISION RESPONSIVE LAYER
+   Targets: 1280 (laptop), 768 (tablet), 480 (phone)
+   Goal: nothing crops, nothing overflows, scale is right
+   ============================================================ */
+
+/* Laptop ≤ 1280px — tighten gutters, prevent oversized hero */
+@media (max-width:1280px){
+  .nav-inner{padding:14px 28px}
+  .hero{padding:48px 28px 0}
+  .hero-grid{gap:32px;min-height:74vh}
+  .sec,.sec-sm,.footer-cta,.impact-bar{padding-left:28px;padding-right:28px}
+  footer{padding-left:28px;padding-right:28px}
+  .planet,.connect,.sip{margin-left:28px;margin-right:28px}
+  .planet-grid{padding:64px 48px;gap:48px}
+  .connect{padding:64px 48px}
+  .sip-copy{padding:64px 48px}
+  .ws-word{font-size:80px}
+  .stamp{width:120px;height:120px;font-size:10.5px;left:0}
+  .float-tag{bottom:120px}
+}
+
+/* Tablet ≤ 1024px — already covered above; reinforce image scale */
+@media (max-width:1024px){
+  .hero-image{height:auto;min-height:0;aspect-ratio:4/5;max-height:560px}
+  .bottle-img{height:100%;max-height:520px}
+  .stamp{width:104px;height:104px;font-size:10px;top:32px;left:8px}
+  .float-tag{right:8px;bottom:24px;max-width:200px;font-size:10px;padding:12px 14px}
+  .float-tag strong{font-size:13px}
+  .story-img{aspect-ratio:1/1.1;max-height:560px}
+  .story-img img{max-height:100%}
+  .connect-visual{height:auto;aspect-ratio:1/1;max-height:380px;width:100%}
+  .connect-visual img{max-height:100%;width:auto}
+  .c-stamp{width:96px;height:96px;font-size:9px;right:0;top:-8px}
+  .sip-img{height:auto;aspect-ratio:16/10;max-height:320px}
+  .footer-cta h2{font-size:clamp(48px,11vw,140px)}
+  .planet,.connect,.sip{margin-left:18px;margin-right:18px;border-radius:24px}
+}
+
+/* Tablet ≤ 768px — single-column rhythm + reduce display sizes */
+@media (max-width:768px){
+  .ticker{font-size:10px;letter-spacing:.14em;padding:8px 0}
+  .nav-inner{padding:12px 18px;gap:14px}
+  .logo-mark img{height:26px}
+  .nav-cta .pill-out{display:none}
+  .nav-cta .pill{padding:9px 14px;font-size:12px}
+  .hero{padding:36px 18px 0}
+  h1.display{font-size:clamp(48px,12vw,96px);line-height:.88}
+  .lede{font-size:16px;margin-top:24px}
+  .hero-actions{margin-top:26px;gap:12px}
+  .btn{padding:14px 22px;font-size:13px}
+  .hero-image{aspect-ratio:3/4;max-height:480px}
+  .bottle-img{max-height:440px}
+  .stamp{width:88px;height:88px;font-size:9px;top:24px;left:0}
+  .float-tag{position:relative;right:auto;bottom:auto;margin:18px auto 0;display:block;max-width:280px}
+  .impact-bar{padding:0 18px}
+  .impact-cell{padding:22px 20px}
+  .impact-num{font-size:clamp(24px,7vw,38px)}
+  .wordstrip{padding:24px 0 6px}
+  .ws-word{font-size:48px;gap:36px}
+  .ws-track{gap:36px}
+  .ws-drop{width:32px;height:32px}
+  .sec{padding:72px 18px 56px}
+  .sec-sm{padding:56px 18px 44px}
+  .story-h{font-size:clamp(40px,9vw,72px)}
+  .story-body{font-size:16px;margin-top:28px;gap:18px}
+  .story-body p:first-of-type::first-letter{font-size:64px;margin:6px 10px 0 0}
+  .sh{margin-bottom:48px}
+  .sh h2{font-size:clamp(34px,8vw,60px)}
+  .sh p{font-size:16px}
+  .diff-grid{grid-template-columns:1fr;border:0}
+  .diff-cell{min-height:auto;padding:28px 22px;border-top:1px solid var(--line)}
+  .diff-cell:last-child{border-bottom:1px solid var(--line)}
+  .products{gap:14px}
+  .p-meta{padding:18px 20px;font-size:10px}
+  .p-body{padding:0 20px 26px}
+  .p-h{font-size:clamp(28px,7.5vw,42px)}
+  .p-desc{font-size:14px}
+  .p-img img{max-height:240px}
+  .p-soon-body{padding:22px 18px}
+  .soon-card{padding:20px}
+  .planet{margin:48px 14px;border-radius:22px}
+  .planet-grid{padding:48px 26px;gap:32px}
+  .planet-h{font-size:clamp(40px,9vw,72px)}
+  .planet-intro{font-size:16px;margin-top:22px}
+  .pledges{margin-top:32px}
+  .pledge{grid-template-columns:36px 1fr;gap:14px;padding:18px 0}
+  .pledge-title{font-size:18px}
+  .pledge-body{font-size:13.5px}
+  .vibes{grid-template-columns:1fr 1fr;grid-auto-rows:160px;gap:12px}
+  .v1,.v6{grid-column:span 2;grid-row:span 2;grid-auto-rows:auto}
+  .v2,.v3,.v4,.v5{grid-column:span 1}
+  .vibe{padding:16px;border-radius:16px}
+  .vibe h5{font-size:16px}
+  .v3 .quote{font-size:18px}
+  .beliefs-h{font-size:clamp(32px,7.5vw,52px)}
+  .beliefs-intro{font-size:15.5px}
+  .b-item{grid-template-columns:42px 1fr;gap:14px;padding:20px 0}
+  .b-name{font-size:18px}
+  .connect{margin:48px 14px;padding:48px 26px;border-radius:22px}
+  .connect-h{font-size:clamp(38px,9vw,64px)}
+  .connect-sub{font-size:15.5px;margin-top:22px}
+  .signup{flex-wrap:wrap;border-radius:18px;padding:8px}
+  .signup input{flex:1 1 160px;padding:10px 14px;font-size:14px}
+  .signup button{padding:11px 16px;font-size:12.5px}
+  .perks{font-size:9.5px;gap:12px;margin-top:18px}
+  .connect-visual{aspect-ratio:1/1;max-height:300px;margin-top:20px}
+  .c-stamp{width:84px;height:84px;font-size:8.5px;right:6px;top:0}
+  .sip{margin:48px 14px;border-radius:22px}
+  .sip-copy{padding:44px 26px}
+  .sip-h{font-size:clamp(36px,9vw,60px)}
+  .sip-p{font-size:15.5px}
+  .sip-img{aspect-ratio:16/9;max-height:240px;border-radius:0 0 22px 22px}
+  .footer-cta{padding:80px 18px 40px}
+  .footer-cta h2{font-size:clamp(44px,13vw,108px)}
+  .footer-cta .sub{font-size:15.5px;margin-top:22px}
+  footer{padding:48px 18px 28px;margin-top:60px}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:30px;margin-bottom:40px}
+  .foot-grid > div:first-child{grid-column:1/-1}
+  .foot-mark img{max-width:100%}
+  .foot-bot{flex-direction:column;gap:10px;align-items:flex-start;font-size:10px}
+}
+
+/* Phone ≤ 480px — final compactness pass */
+@media (max-width:480px){
+  .ticker-track span{gap:10px}
+  .nav-inner{padding:10px 14px}
+  .logo-mark img{height:24px}
+  .hero{padding:28px 14px 0}
+  h1.display{font-size:clamp(44px,13.5vw,80px)}
+  .eyebrow{font-size:10px;letter-spacing:.16em;margin-bottom:18px}
+  .lede{font-size:15px}
+  .hero-image{max-height:380px;aspect-ratio:3/4.2}
+  .bottle-img{max-height:340px}
+  .stamp{width:74px;height:74px;font-size:8px}
+  .impact-inner{grid-template-columns:1fr 1fr}
+  .impact-cell{padding:18px 16px}
+  .impact-num{font-size:clamp(22px,7.5vw,30px)}
+  .impact-label{font-size:9.5px}
+  .ws-word{font-size:36px;gap:24px}
+  .ws-track{gap:24px}
+  .ws-drop{width:24px;height:24px}
+  .story-h{font-size:clamp(36px,11vw,60px)}
+  .sh h2{font-size:clamp(30px,10vw,52px)}
+  .p-h{font-size:clamp(26px,8vw,38px)}
+  .p-img img{max-height:200px}
+  .planet-h{font-size:clamp(34px,11vw,60px)}
+  .vibes{grid-auto-rows:140px;gap:10px}
+  .v1,.v6{grid-row:span 2}
+  .vibe h5{font-size:14px}
+  .v3 .quote{font-size:16px}
+  .beliefs-h{font-size:clamp(28px,9vw,44px)}
+  .connect{padding:40px 22px}
+  .connect-h{font-size:clamp(32px,10vw,52px)}
+  .sip-h{font-size:clamp(32px,10vw,52px)}
+  .footer-cta h2{font-size:clamp(40px,15vw,84px)}
+  .foot-grid{grid-template-columns:1fr;gap:24px}
+}
+
+/* Ultra-wide ≥ 1600px — keep text from getting absurd */
+@media (min-width:1600px){
+  h1.display{font-size:168px}
+  .footer-cta h2{font-size:200px}
+  .foot-mark img{max-width:640px}
+}
+
+/* SAFETY: never let any image exceed its container */
+.bottle-img,.story-img img,.p-img img,.connect-visual img,.foot-mark img{max-width:100%}
+
+/* PREMIUM CRAFT MOVES */
+
+/* 1. Scroll progress bar — subtle proof of polish */
+#scroll-progress{position:fixed;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--blue),var(--green));z-index:100;transition:width .12s ease-out;will-change:width}
+
+/* 2. Fade-up reveal on key blocks (no JS dependency for first paint) */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+}
+
+/* 3. Refine product card hover with brand-tinted glow */
+.product:hover{box-shadow:0 30px 60px -28px rgba(5,5,69,.35),0 0 0 1px rgba(45,105,255,.2)}
+.p-thce:hover{box-shadow:0 30px 60px -28px rgba(1,69,56,.55),0 0 0 1px rgba(74,169,125,.25)}
+
+/* 4. Slightly tighter / more confident nav */
+nav{border-bottom-color:rgba(5,5,69,.08)}
+
+/* 5. Section dividers with brand gradient hairline */
+.sec + .sec, .sec-sm + .sec, .sec + .sec-sm{position:relative}
+.sec + .sec::before, .sec-sm + .sec::before, .sec + .sec-sm::before{content:"";position:absolute;top:0;left:36px;right:36px;height:1px;background:linear-gradient(90deg,transparent,rgba(5,5,69,.12),transparent)}
+
+/* 6. Form focus polish */
+.signup:focus-within{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.18)}
+.signup input:focus{outline:0}
+button:focus-visible,a:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:6px}
+
+/* ============================================================
+   HERO SIGNATURE MOMENT — pure CSS water FX
+   Rising bubbles · base ripples · slow glass shimmer · falling drops
+   No JS, no video file, ~0kb cost
+   ============================================================ */
+
+.bottle-wrap,.hero-fx{display:none !important}
+
+/* Shimmer sweeping across the glass — feels like light catching the bottle */
+.bottle-wrap::after{
+  content:"";position:absolute;inset:0;z-index:3;pointer-events:none;
+  background:linear-gradient(115deg,transparent 38%,rgba(255,255,255,.32) 50%,transparent 62%);
+  background-size:220% 100%;background-position:-110% 0;
+  animation:thc-shimmer 7.5s ease-in-out infinite;
+  mix-blend-mode:soft-light;opacity:.85;
+  -webkit-mask-image:radial-gradient(45% 70% at 50% 60%,#000 40%,transparent 80%);
+  mask-image:radial-gradient(45% 70% at 50% 60%,#000 40%,transparent 80%);
+}
+@keyframes thc-shimmer{
+  0%, 18%   {background-position:-110% 0}
+  55%       {background-position:120% 0}
+  100%      {background-position:120% 0}
+}
+
+/* FX layer above gradient backdrop, below stamp/tag */
+.hero-fx{position:absolute;inset:0;pointer-events:none;z-index:2;overflow:hidden}
+
+/* Bubbles — varied size, position, duration */
+.hero-fx .bubble{
+  position:absolute;bottom:6%;border-radius:50%;
+  background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.95),rgba(184,204,255,.55) 55%,rgba(45,105,255,.0) 80%);
+  box-shadow:inset 0 0 6px rgba(255,255,255,.4),0 0 6px rgba(45,105,255,.18);
+  animation:bubble-rise linear infinite;
+  will-change:transform,opacity;opacity:0;
+}
+.hero-fx .bubble.b1{left:14%;width:11px;height:11px;animation-duration:7.5s;animation-delay:.0s}
+.hero-fx .bubble.b2{left:26%;width:7px;height:7px;animation-duration:9.2s;animation-delay:1.4s}
+.hero-fx .bubble.b3{left:38%;width:14px;height:14px;animation-duration:8s;animation-delay:2.6s}
+.hero-fx .bubble.b4{left:54%;width:6px;height:6px;animation-duration:10.5s;animation-delay:.8s}
+.hero-fx .bubble.b5{left:66%;width:13px;height:13px;animation-duration:8.6s;animation-delay:3.7s}
+.hero-fx .bubble.b6{left:78%;width:8px;height:8px;animation-duration:11s;animation-delay:5.2s}
+.hero-fx .bubble.b7{left:88%;width:5px;height:5px;animation-duration:12s;animation-delay:2.1s}
+.hero-fx .bubble.b8{left:46%;width:9px;height:9px;animation-duration:9.6s;animation-delay:4.3s}
+@keyframes bubble-rise{
+  0%   {transform:translate3d(0,0,0) scale(.85);opacity:0}
+  10%  {opacity:.95}
+  50%  {transform:translate3d(10px,-50vh,0) scale(1)}
+  90%  {opacity:.85}
+  100% {transform:translate3d(-8px,-92vh,0) scale(.7);opacity:0}
+}
+
+/* Base ripples — concentric, slow, brand-tinted */
+.hero-fx .ripple{
+  position:absolute;left:50%;bottom:4%;width:120px;height:36px;
+  border:2px solid rgba(45,105,255,.32);border-radius:50%;
+  transform:translate(-50%,0) scale(.45);opacity:0;
+  animation:ripple-out 5.2s cubic-bezier(.22,.61,.36,1) infinite;
+  filter:blur(.3px);
+}
+.hero-fx .ripple.r2{animation-delay:1.7s;border-color:rgba(74,169,125,.26);width:140px;height:40px}
+.hero-fx .ripple.r3{animation-delay:3.4s;border-color:rgba(45,105,255,.22);width:100px;height:30px}
+@keyframes ripple-out{
+  0%   {opacity:0;transform:translate(-50%,0) scale(.45)}
+  18%  {opacity:.85}
+  100% {opacity:0;transform:translate(-50%,0) scale(2.6)}
+}
+
+/* Falling droplets from above — punctuates the loop */
+.hero-fx .droplet{
+  position:absolute;top:-6px;width:6px;height:10px;
+  background:linear-gradient(180deg,rgba(184,204,255,.95),rgba(45,105,255,.7));
+  border-radius:50% 50% 50% 50% / 70% 70% 30% 30%;
+  filter:drop-shadow(0 2px 4px rgba(45,105,255,.35));
+  animation:drop-fall 6s cubic-bezier(.55,.06,.68,.19) infinite;
+  opacity:0;
+}
+.hero-fx .droplet.d1{left:42%;animation-delay:2.2s}
+.hero-fx .droplet.d2{left:58%;animation-delay:4.8s;animation-duration:7s}
+@keyframes drop-fall{
+  0%   {transform:translateY(0) scaleY(.9);opacity:0}
+  10%  {opacity:1}
+  70%  {transform:translateY(74vh) scaleY(1.4);opacity:1}
+  85%  {transform:translateY(82vh) scaleY(.4);opacity:0}
+  100% {transform:translateY(82vh);opacity:0}
+}
+
+/* Make the bg-circle clip its FX nicely */
+.bg-circle{overflow:hidden}
+
+/* Mobile: keep FX but lighter */
+@media (max-width:768px){
+  .hero-fx .bubble.b1, .hero-fx .bubble.b3, .hero-fx .bubble.b5, .hero-fx .bubble.b8{display:none}
+  .hero-fx .ripple{width:90px;height:28px}
+  .hero-fx .ripple.r2{width:104px;height:32px}
+  .bottle-wrap::after{opacity:.7}
+}
+
+/* Honor reduced motion — kill all hero FX */
+@media (prefers-reduced-motion: reduce){
+  .hero-fx, .bottle-wrap::after{display:none}
+}
+</style>
+</head>
+<body>
+<div id="scroll-progress" aria-hidden="true"></div>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span><i></i> Born in Dhaka · Built for Bangladesh</span>
+    <span><i></i> Drink different. Do more.</span>
+    <span><i></i> Plastic neutral by 2027. We mean it.</span>
+    <span><i></i> Cleaning rivers. Giving water. Growing together.</span>
+    <span><i></i> Born in Dhaka · Built for Bangladesh</span>
+    <span><i></i> Drink different. Do more.</span>
+    <span><i></i> Plastic neutral by 2027. We mean it.</span>
+    <span><i></i> Cleaning rivers. Giving water. Growing together.</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="logo-mark" href="#" aria-label="The Hydration Company">
+      <img src="assets/brand/logo-thc-blue.png" alt="The Hydration Company"/>
+    </a>
+    <div class="nav-links">
+      <a href="#story">Story</a>
+      <a href="#different">Different</a>
+      <a href="#range">Products</a>
+      <a href="#planet">Planet</a>
+      <a href="#culture">Culture</a>
+      <a href="#connect">Join</a>
+    </div>
+    <div class="nav-cta">
+      <a class="pill-out" href="#planet">Our pledge</a>
+      <a class="pill" href="#range">See the range
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <div class="eyebrow">
+        <span class="dot" style="background:var(--blue)"></span>
+        Bottled in Dhaka · Built different · Since 2024
+      </div>
+      <h1 class="display">
+        Drink<em class="blue">Different.</em><em class="green">Do More.</em>
+      </h1>
+      <p class="lede">Premium water. Real performance. Bottled where you live.</p>
+      <div class="hero-actions">
+        <button class="btn btn-blue">Meet THC
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+        </button>
+        <button class="btn-ghost" style="color:var(--green)" onclick="document.getElementById('planet').scrollIntoView()">The pledge
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+        </button>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="hero-card">
+        <span class="hero-chip top-left">01 / The Original</span>
+        <span class="hero-chip top-right">500ml · Glass</span>
+        <img src="assets/products/glass-cobalt-trio.png" alt="THC Premium Glass Water in cobalt and clear" loading="eager"/>
+        <div class="hero-tag">
+          <strong>Plastic Neutral '27</strong>
+          <span>Bangladesh's first net-zero beverage brand</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- IMPACT BAR -->
+<div class="impact-bar">
+  <div class="impact-inner">
+    <div class="impact-cell">
+      <div class="impact-num c-blue">8</div>
+      <div class="impact-label">SKUs across glass, can, cup, sachet</div>
+    </div>
+    <div class="impact-cell">
+      <div class="impact-num c-green">2027</div>
+      <div class="impact-label">Plastic neutral target year</div>
+    </div>
+    <div class="impact-cell">
+      <div class="impact-num">100%</div>
+      <div class="impact-label">Glass &amp; aluminum core line</div>
+    </div>
+    <div class="impact-cell">
+      <div class="impact-num c-green">∞</div>
+      <div class="impact-label">Community cleanups planned</div>
+    </div>
+  </div>
+</div>
+
+<!-- WORDSTRIP -->
+<div class="wordstrip">
+  <div class="ws-track">
+    <span class="ws-word">Drink Different
+      <svg class="ws-drop" viewBox="0 0 24 24"><path d="M12 2C7 9 4 13 4 17a8 8 0 0 0 16 0C20 13 17 9 12 2z"/></svg>
+      <span class="ws-word ws-out">Do More</span>
+      <svg class="ws-drop" viewBox="0 0 24 24"><path d="M12 2C7 9 4 13 4 17a8 8 0 0 0 16 0C20 13 17 9 12 2z"/></svg>
+      Made Here
+      <svg class="ws-drop" viewBox="0 0 24 24"><path d="M12 2C7 9 4 13 4 17a8 8 0 0 0 16 0C20 13 17 9 12 2z"/></svg>
+    </span>
+    <span class="ws-word">Drink Different
+      <svg class="ws-drop" viewBox="0 0 24 24"><path d="M12 2C7 9 4 13 4 17a8 8 0 0 0 16 0C20 13 17 9 12 2z"/></svg>
+      <span class="ws-word ws-out">Do More</span>
+      <svg class="ws-drop" viewBox="0 0 24 24"><path d="M12 2C7 9 4 13 4 17a8 8 0 0 0 16 0C20 13 17 9 12 2z"/></svg>
+      Made Here
+      <svg class="ws-drop" viewBox="0 0 24 24"><path d="M12 2C7 9 4 13 4 17a8 8 0 0 0 16 0C20 13 17 9 12 2z"/></svg>
+    </span>
+  </div>
+</div>
+
+<!-- STORY -->
+<section class="sec" id="story">
+  <div class="story-grid">
+    <div>
+      <div class="meta-lbl"><i></i> Our story</div>
+      <h2 class="story-h">Water,<br/>finally taken<br/><span class="c-blue">seriously.</span></h2>
+      <div class="story-body">
+        <p>Premium water used to mean imported. Hotel lobby water. Not us. So we built our own.</p>
+        <p>Glass first. Aluminum next. SIP, THCE, GAINZ to follow. Every product tuned to how Bangladesh actually moves. Designed in Dhaka. Bottled in Dhaka.</p>
+        <p>But product is half the story. Too many families still don't have clean water. Our rivers are drowning in plastic. We can't sell water and ignore that. We won't.</p>
+      </div>
+      <div class="signoff"><i></i> The Founders · Dhaka · 2024</div>
+    </div>
+    <div class="story-img">
+      <span class="story-img-tag"><i></i> Bottled in Bangladesh</span>
+      <img src="assets/products/glass-lineup.png" alt="The Hydration Company premium glass range — clear and emerald" loading="lazy"/>
+      <div class="story-corner">Drink<br/>Different.</div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENT -->
+<section class="sec-sm" id="different">
+  <div class="sh">
+    <div>
+      <div class="meta-lbl"><i></i> 01 / What makes us different</div>
+      <h2>Not another<br/><em class="c-blue">water brand.</em></h2>
+    </div>
+    <p>Plenty of brands sell water. Almost none sell a point of view. Here's what we won't compromise on.</p>
+  </div>
+  <div class="diff-grid">
+    <div class="diff-cell">
+      <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3C8 8 5 12 5 16a7 7 0 0 0 14 0C19 12 16 8 12 3z"/></svg>
+      <span class="diff-num">/ 01</span>
+      <h4>Designed,<br/>not bottled.</h4>
+      <p>Weight of glass. Colour system. Label hierarchy. The bottle is a product, not packaging.</p>
+    </div>
+    <div class="diff-cell">
+      <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a13 13 0 0 1 0 18M12 3a13 13 0 0 0 0 18"/></svg>
+      <span class="diff-num">/ 02</span>
+      <h4>Local first,<br/>always.</h4>
+      <p>Sourced, formulated, tested and bottled in Bangladesh. Premium doesn't need a passport.</p>
+    </div>
+    <div class="diff-cell">
+      <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h18M3 12h12M3 18h8"/></svg>
+      <span class="diff-num">/ 03</span>
+      <h4>No sugar<br/>theatre.</h4>
+      <p>Real minerals. Honest labels. Zero fluorescent dyes or wellness buzzwords. Ingredients you can read out loud to your mum.</p>
+    </div>
+    <div class="diff-cell">
+      <svg class="diff-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22V12m0 0C10 8 6 6 3 7m9 5c2-4 6-6 9-5"/></svg>
+      <span class="diff-num">/ 04</span>
+      <h4>Purpose<br/>in the DNA.</h4>
+      <p>We clean rivers. Donate water access. Go plastic neutral. Impact isn't a campaign. It's the reason we exist.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="sec" id="range">
+  <div class="sh">
+    <div>
+      <div class="meta-lbl"><i></i> 02 / The range</div>
+      <h2>Six lines.<br/>One <em class="c-blue">obsession.</em></h2>
+    </div>
+    <p>From the glass on your desk to the sachet that saves the morning after. Every product, same belief. Hydration shouldn't be the boring part of your day.</p>
+  </div>
+  <div class="products">
+
+    <!-- 01 · Luxury Water — hero card -->
+    <article class="p-card" style="grid-column:span 7">
+      <div class="p-photo">
+        <span class="p-tag">01 / Luxury Water</span>
+        <span class="p-badge">Hero range</span>
+        <img src="assets/products/glass-cobalt-trio.png" alt="THC Premium Glass Water — cobalt edition" loading="lazy"/>
+      </div>
+      <div class="p-info">
+        <div class="p-meta"><span>500ml · Glass · Still</span><span>pH 7.4 · TDS balanced</span></div>
+        <h3 class="p-h">The Original Bottle.</h3>
+        <p class="p-desc">Premium glass-bottled spring water with a balanced mineral profile. Premium enough for the board table, honest enough for every single day.</p>
+        <div class="p-chips">
+          <span class="chip"><i></i> Cobalt + clear glass</span>
+          <span class="chip"><i></i> Reusable</span>
+          <span class="chip"><i></i> Bangladesh-bottled</span>
+        </div>
+        <div class="p-moment"><i></i> For the table, the desk, the night you go all out</div>
+      </div>
+    </article>
+
+    <!-- 02 · Premium Can -->
+    <article class="p-card" style="grid-column:span 5">
+      <div class="p-photo">
+        <span class="p-tag">02 / Premium Water</span>
+        <img src="assets/products/can-trio.png" alt="THC Premium Water aluminum cans" loading="lazy"/>
+      </div>
+      <div class="p-info">
+        <div class="p-meta"><span>473ml · Aluminum</span><span>100% recyclable</span></div>
+        <h3 class="p-h">Cold. Crisp. Canned.</h3>
+        <p class="p-desc">Same water. Infinitely recyclable shell. The one you grab on the way out and feel good about finishing.</p>
+        <div class="p-chips">
+          <span class="chip"><i></i> Cold-fill</span>
+          <span class="chip"><i></i> 100% recyclable</span>
+        </div>
+        <div class="p-moment"><i></i> For the road, the gym, the rooftop, the commute</div>
+      </div>
+    </article>
+
+    <!-- 03 · SIP Cup Water -->
+    <article class="p-card" style="grid-column:span 4">
+      <div class="p-photo">
+        <span class="p-tag">03 / SIP Cup Water</span>
+        <img src="assets/products/sip-stack-light.png" alt="SIP single-serve sealed cup water" loading="lazy"/>
+      </div>
+      <div class="p-info">
+        <div class="p-meta"><span>250ml · Sealed cup</span><span>QR-traceable</span></div>
+        <h3 class="p-h">The Cup That Goes Everywhere.</h3>
+        <p class="p-desc">Peel-and-drink cup water for events, hospitals, mosques, weddings. Each batch is QR-traceable. Fully sealed, fully stackable.</p>
+        <div class="p-chips">
+          <span class="chip"><i></i> QR-traceable</span>
+          <span class="chip"><i></i> Stackable</span>
+        </div>
+        <div class="p-moment"><i></i> For crowds, kids, ceremonies, care</div>
+      </div>
+    </article>
+
+    <!-- 04 · THCE — dark variant for dark photography -->
+    <article class="p-card dark" style="grid-column:span 4">
+      <div class="p-photo">
+        <span class="p-tag">04 / THCE Electrolytes</span>
+        <img src="assets/products/thce-box.png" alt="THCE Electrolyte Drink Mix — box, sachets, ready-to-drink can" loading="lazy"/>
+      </div>
+      <div class="p-info">
+        <div class="p-meta"><span>Performance · Wellness</span><span>0g sugar</span></div>
+        <h3 class="p-h">Electrolytes. No compromise.</h3>
+        <p class="p-desc">A clean blend of sodium, potassium and magnesium. LMNT-grade performance. Liquid IV-style wellness. Citrus lime, mango, raspberry, watermelon.</p>
+        <div class="p-chips">
+          <span class="chip"><i></i> 0g sugar</span>
+          <span class="chip"><i></i> 4 flavours</span>
+          <span class="chip"><i></i> RTD + sachets</span>
+        </div>
+        <div class="p-moment"><i></i> For training, travel, long shifts, the morning after</div>
+      </div>
+    </article>
+
+    <!-- 05 · GAINZ Protein -->
+    <article class="p-card" style="grid-column:span 4">
+      <div class="p-photo">
+        <span class="p-tag">05 / GAINZ Protein</span>
+        <span class="p-badge">New</span>
+        <img src="assets/products/gainz-protein.png" alt="GAINZ Protein Water — 20g protein, zero sugar, tropical lime" loading="lazy"/>
+      </div>
+      <div class="p-info">
+        <div class="p-meta"><span>500ml · 20g protein</span><span>Zero sugar</span></div>
+        <h3 class="p-h">Protein. Without the shake.</h3>
+        <p class="p-desc">Clean protein in a hydrating base. Lighter. Not chalky. Tuned to Bangladeshi taste and the everyday athlete who doesn't have time for powder math.</p>
+        <div class="p-chips">
+          <span class="chip"><i></i> 20g protein</span>
+          <span class="chip"><i></i> +BCAA + electrolytes</span>
+          <span class="chip"><i></i> Tropical lime</span>
+        </div>
+        <div class="p-moment"><i></i> For training days, recovery, post-gym</div>
+      </div>
+    </article>
+
+    <!-- 06 · Wellness Water — full-width functional hero -->
+    <article class="p-functional">
+      <div class="p-fn-photo">
+        <span class="p-fn-tag">06 / Wellness Water</span>
+        <img src="assets/products/wellness-water-trio.png" alt="THC Wellness Water — Focus, Immune, Collagen variants" loading="lazy"/>
+      </div>
+      <div class="p-fn-copy">
+        <div class="p-meta"><span>The functional line</span><span>3 variants · Live</span></div>
+        <h3>Function.<br/>Tuned <span class="accent">to you.</span></h3>
+        <p>Three water-based functional drinks. Pure hydration as the base. Real benefits on top. Adaptogens we believe in, not a buzzword shelf. Tuned for Bangladesh first.</p>
+        <div class="p-fn-variants">
+          <div class="p-fn-variant">
+            <div class="v-tag">/ Focus</div>
+            <div class="v-name">Focus<br/>Hydration</div>
+          </div>
+          <div class="p-fn-variant">
+            <div class="v-tag">/ Immune</div>
+            <div class="v-name">Immune<br/>Support</div>
+          </div>
+          <div class="p-fn-variant">
+            <div class="v-tag">/ Beauty</div>
+            <div class="v-name">Collagen<br/>+ Glow</div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- PLANET -->
+<div class="planet" id="planet">
+  <div class="planet-grid">
+    <div>
+      <div class="eyebrow" style="color:#7FE3B0"><span class="dot" style="background:var(--green)"></span> Our planet pledge</div>
+      <h2 class="planet-h reveal">We sell water.<br/>We protect <span class="lime">water.</span><br/><span class="stroke">No exceptions.</span></h2>
+      <p class="planet-intro">Bangladesh's rivers are who we are. The families who still can't drink clean water in 2026 are who we're accountable to. We can't take from water without giving back to it.</p>
+      <div class="pledges">
+        <div class="pledge">
+          <div class="pledge-n">/ 01</div>
+          <div>
+            <div class="pledge-title">Plastic neutral by 2027</div>
+            <p class="pledge-body">For every gram of plastic in our supply chain, we collect and recycle at least one gram from Bangladesh's rivers, waterways and streets. Numbers published quarterly. No glossing.</p>
+          </div>
+        </div>
+        <div class="pledge">
+          <div class="pledge-n">/ 02</div>
+          <div>
+            <div class="pledge-title">River &amp; waterway cleanups</div>
+            <p class="pledge-body">Monthly cleanup drives across Dhaka's canals. Growing nationwide. We recruit locally, pay community teams, track plastic removed by weight. No optics. Just work.</p>
+          </div>
+        </div>
+        <div class="pledge">
+          <div class="pledge-n">/ 03</div>
+          <div>
+            <div class="pledge-title">Clean water for underserved families</div>
+            <p class="pledge-body">A portion of every product sold goes toward clean water access for Bangladeshi families who still don't have it. We partner with local NGOs. No overhead theatre.</p>
+          </div>
+        </div>
+        <div class="pledge">
+          <div class="pledge-n">/ 04</div>
+          <div>
+            <div class="pledge-title">Glass and aluminum first, always</div>
+            <p class="pledge-body">Our core line never ships in single-use plastic. When plastic appears in the chain, we offset it, replace it, and account for it publicly. Every time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="planet-stats">
+        <div class="pstat"><div class="big">0</div><div class="desc">Plastic bottles in our core range</div></div>
+        <div class="pstat"><div class="big">2027</div><div class="desc">Plastic neutral commitment year</div></div>
+        <div class="pbadge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3C8 8 5 12 5 16a7 7 0 0 0 14 0C19 12 16 8 12 3z"/><path d="M12 22V16"/></svg>
+          <p><strong>Bangladesh's first plastic-neutral beverage company.</strong>We're not there yet. But it's what we're building everything around. Every product decision runs through this filter first.</p>
+        </div>
+        <div class="pstat"><div class="big sm">Community</div><div class="desc">Local teams paid for every cleanup drive</div></div>
+        <div class="pstat"><div class="big sm">Quarterly</div><div class="desc">Plastic impact reports, published publicly</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CULTURE -->
+<section class="sec" id="culture">
+  <div class="sh">
+    <div>
+      <div class="meta-lbl"><i></i> 03 / The culture</div>
+      <h2>A brand worth<br/><em class="c-blue">wearing</em><br/><span class="c-out">on a shirt.</span></h2>
+    </div>
+    <p>Cricket pitch. Basement gig. Friday match. Food festival. The brand isn't just on the bottle. It's the people drinking from it.</p>
+  </div>
+  <div class="vibes">
+    <div class="vibe v1">
+      <span class="vibe-tag">Field notes / Dhaka</span>
+      <h5>The friday football kit</h5>
+    </div>
+    <div class="vibe v2">
+      <span class="vibe-tag">Drop / 003</span>
+      <h5>THC × the local skate scene</h5>
+    </div>
+    <div class="vibe v3">
+      <span class="vibe-tag">Heard at HQ</span>
+      <p class="quote">"Premium doesn't need a foreign passport."</p>
+    </div>
+    <div class="vibe v4">
+      <span class="vibe-tag">SIP / events</span>
+      <h5>15,000 cups poured this month</h5>
+    </div>
+    <div class="vibe v5">
+      <span class="vibe-tag" style="color:#7FE3B0;opacity:1">Planet / river day</span>
+      <div class="v5-stat">40<span style="font-size:.4em;letter-spacing:0">KG</span></div>
+      <div class="v5-sub">Plastic removed.<br/>Buriganga River. April '26.</div>
+    </div>
+    <div class="vibe v6">
+      <span class="vibe-tag">Out in the wild</span>
+      <h5>On rooftops, desks, gym bags. Everywhere.</h5>
+    </div>
+  </div>
+</section>
+
+<!-- BELIEFS -->
+<section class="sec-sm">
+  <div class="beliefs-grid">
+    <div>
+      <div class="meta-lbl"><i></i> 04 / What we stand for</div>
+      <h3 class="beliefs-h">Six things.<br/><em style="font-style:normal;color:var(--blue)">Zero</em><br/>compromises.</h3>
+      <p class="beliefs-intro">Not values on a wall. Rules that cost us something. We chose them anyway.</p>
+    </div>
+    <div class="beliefs-list">
+      <div class="b-item"><div class="b-num">/ 01</div><div class="b-name">Honest labels<span>If we wouldn't drink it ourselves, it doesn't go in the bottle. No filler, no fake flavour, no asterisks.</span></div></div>
+      <div class="b-item"><div class="b-num">/ 02</div><div class="b-name">Real packaging<span>Glass and aluminum first. When plastic has to be in the chain, we offset it publicly. Every gram. Every time.</span></div></div>
+      <div class="b-item"><div class="b-num">/ 03</div><div class="b-name">Local pride<span>Bangladeshi water, Bangladeshi design, Bangladeshi music in our shoots. Premium doesn't need a foreign passport.</span></div></div>
+      <div class="b-item"><div class="b-num">/ 04</div><div class="b-name">Impact over optics<span>We'd rather pay a cleanup crew than buy a billboard. We'd rather publish our failures than bury them in a footnote.</span></div></div>
+      <div class="b-item"><div class="b-num">/ 05</div><div class="b-name">Community over campaigns<span>Every launch is a community moment. Every cleanup is a local team getting paid. Growth happens with people, not to them.</span></div></div>
+      <div class="b-item"><div class="b-num">/ 06</div><div class="b-name">Drink different<span>Every decision should make the simple act of drinking water feel less ordinary. And more worth it.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONNECT -->
+<section class="connect" id="connect">
+  <div class="connect-grid">
+    <div>
+      <div class="eyebrow" style="color:#cfd8ff"><span class="dot" style="background:#fff"></span> Join the company</div>
+      <h2 class="connect-h">Drink with us.<br/>Build with us.</h2>
+      <p class="connect-sub">No spam. Early drops. Cleanup invites. Behind the scenes from the bottling line. Honest opinions about water and Bangladesh.</p>
+      <form class="signup" onsubmit="event.preventDefault();this.querySelector('button').textContent='You’re in. Welcome.'">
+        <input type="email" placeholder="your@email.com" required/>
+        <button type="submit">Join us
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+        </button>
+      </form>
+      <div class="perks">
+        <span><i></i> Early drops</span>
+        <span><i></i> Cleanup invites</span>
+        <span><i></i> Member colours</span>
+        <span><i></i> Impact reports first</span>
+      </div>
+    </div>
+    <div class="connect-visual">
+      <span class="connect-chip">Now bottling · Dhaka</span>
+      <img src="assets/products/wellness-water-trio.png" alt="THC Wellness Water — Focus, Immune, Collagen" loading="lazy"/>
+    </div>
+  </div>
+</section>
+
+<!-- SIP BAND -->
+<section class="sip">
+  <div class="sip-copy">
+    <div class="eyebrow"><span class="dot" style="background:#7da4ff"></span> A new format. By THC.</div>
+    <img src="assets/brand/logo-sip.png" alt="SIP" style="height:84px;width:auto;display:block;margin-bottom:18px;filter:drop-shadow(0 6px 18px rgba(45,105,255,.35))"/>
+    <h3 class="sip-h reveal">Water<br/>in a <span class="accent">cup.</span></h3>
+    <p class="sip-p">Single-serve sealed cups for events, hospitals, mosques, weddings. Peel. Drink. Recycle. Every batch QR-traced. We're accountable for every cup we ship.</p>
+    <div class="sip-row">
+      <a class="sip-a1" href="#">Explore SIP
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+      </a>
+      <a class="sip-a2" href="#">Bulk &amp; events</a>
+    </div>
+  </div>
+  <div class="sip-img" role="img" aria-label="Stack of SIP water cups"></div>
+</section>
+
+<!-- FOOTER CTA -->
+<section class="footer-cta">
+  <h2 class="reveal">
+    <span class="c-blue">Drink</span><br/>
+    <span class="c-out" style="-webkit-text-stroke:2.5px var(--blue-deep);color:transparent">Different.</span><br/>
+    <span class="c-green">Do More.</span>
+  </h2>
+  <p class="sub">A water company that gives back to water. Sip by sip, cleanup by cleanup, family by family.</p>
+  <div class="row">
+    <button class="btn btn-blue">Meet the brand
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+    </button>
+    <button class="btn btn-green" onclick="document.getElementById('planet').scrollIntoView()">Our planet pledge
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+    </button>
+    <button class="btn-ghost" onclick="document.getElementById('connect').scrollIntoView()">Join the company
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"></path></svg>
+    </button>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="foot-grid">
+    <div>
+      <img src="assets/brand/logo-thc-blue.png" alt="The Hydration Company" style="height:38px;width:auto;display:block"/>
+      <p style="font-size:13px;color:#5b6582;margin-top:18px;max-width:300px;line-height:1.55">A new kind of beverage company. Designed in Dhaka. Built for Bangladesh. Committed to the water that built us.</p>
+      <div style="margin-top:18px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue)">Drink different. Do more. Since '24.</div>
+    </div>
+    <div>
+      <h4>The range</h4>
+      <ul>
+        <li><a href="#">Luxury Glass</a></li>
+        <li><a href="#">Premium Can</a></li>
+        <li><a href="#">SIP Cups</a></li>
+        <li><a href="#">THCE Electrolytes</a></li>
+        <li><a href="#">GAINZ Protein</a></li>
+        <li><a href="#">Wellness Water</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>The company</h4>
+      <ul>
+        <li><a href="#">Our story</a></li>
+        <li><a href="#">What we believe</a></li>
+        <li><a href="#">Planet pledge</a></li>
+        <li><a href="#">Press</a></li>
+        <li><a href="#">Careers</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Do more</h4>
+      <ul>
+        <li><a href="#">River cleanups</a></li>
+        <li><a href="#">Water access fund</a></li>
+        <li><a href="#">Events &amp; bulk</a></li>
+        <li><a href="#">Stockists</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Stay close</h4>
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">YouTube</a></li>
+        <li><a href="#">Newsletter</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-mark"><img src="assets/brand/logo-thc-blue.png" alt="The Hydration Company"/></div>
+  <div class="foot-bot">
+    <span>© 2026 The Hydration Company Ltd. · Dhaka, Bangladesh</span>
+    <span class="foot-green"><i></i> Plastic neutral by 2027</span>
+    <span><a href="#">Privacy</a> · <a href="#">Terms</a></span>
+  </div>
+</footer>
+
+<script>
+  // Scroll progress bar
+  (function(){
+    var bar = document.getElementById('scroll-progress');
+    if(!bar) return;
+    var ticking = false;
+    function update(){
+      var doc = document.documentElement;
+      var max = (doc.scrollHeight - doc.clientHeight) || 1;
+      var pct = Math.min(100, Math.max(0, (window.scrollY / max) * 100));
+      bar.style.width = pct + '%';
+      ticking = false;
+    }
+    window.addEventListener('scroll', function(){
+      if(!ticking){ requestAnimationFrame(update); ticking = true; }
+    }, {passive:true});
+    update();
+  })();
+
+  // Reveal-on-scroll for .reveal nodes
+  (function(){
+    var nodes = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){
+      nodes.forEach(function(n){ n.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:0.18, rootMargin:'0px 0px -10% 0px'});
+    nodes.forEach(function(n){ io.observe(n); });
+  })();
+</script>
+</body>
+</html>
