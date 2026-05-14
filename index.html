@@ -424,8 +424,8 @@ h1.display em{font-style:normal;display:block;margin-top:-.04em}
 .vibe h5{font-family:"Radlush Display",sans-serif;font-size:21px;line-height:.96;letter-spacing:-.01em;text-transform:uppercase}
 .v1{grid-column:span 5;grid-row:span 2}
 .v2{grid-column:span 4}
-.v3{grid-column:span 3;background:#fff;color:var(--ink)}
-.v3::after{display:none}
+.v3{grid-column:span 3}
+.v3::after{background:linear-gradient(180deg,rgba(10,19,48,.35) 0%,rgba(10,19,48,.85) 65%,rgba(10,19,48,.95))}
 .v4{grid-column:span 3}
 .v5{grid-column:span 4}
 .v5::after{background:linear-gradient(180deg,transparent 25%,rgba(1,69,56,.9))}
@@ -435,11 +435,12 @@ h1.display em{font-style:normal;display:block;margin-top:-.04em}
 /* Per-tile object-position tuning so faces/products stay visible */
 .v1 img.vibe-bg{object-position:center 30%}
 .v2 img.vibe-bg{object-position:center center}
+.v3 img.vibe-bg{object-position:center 30%}
 .v4 img.vibe-bg{object-position:center 35%}
 .v5 img.vibe-bg{object-position:center 40%}
 .v6 img.vibe-bg{object-position:center 25%}
-.v3 .quote{font-family:"Radlush Display",sans-serif;font-size:26px;line-height:.95;letter-spacing:-.02em;text-transform:uppercase;color:var(--ink)}
-.v3 .vibe-tag{color:#5b6582;opacity:1}
+.v3 .quote{font-family:"Radlush Display",sans-serif;font-size:26px;line-height:.95;letter-spacing:-.02em;text-transform:uppercase;color:#fff}
+.v3 .vibe-tag{color:#7da4ff;opacity:1}
 
 /* BELIEFS */
 .beliefs-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
@@ -1331,6 +1332,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--blue);outline-offse
       <h5>THC × the local BMX scene</h5>
     </div>
     <div class="vibe v3">
+      <img class="vibe-bg" src="assets/lifestyle/passport-stamps.png" alt="Bangladeshi passport with stamps" loading="lazy"/>
       <span class="vibe-tag">Heard at HQ</span>
       <p class="quote">"Premium doesn't need a foreign passport."</p>
     </div>
