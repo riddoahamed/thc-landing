@@ -143,7 +143,7 @@ h1.display em{font-style:normal;display:block;margin-top:-.04em}
 .ws-track{display:flex;gap:60px;align-items:center;animation:tick 52s linear infinite;width:max-content;white-space:nowrap}
 .ws-word{font-family:"Radlush Display",sans-serif;font-size:96px;letter-spacing:-.04em;color:var(--ink);text-transform:uppercase;display:inline-flex;align-items:center;gap:60px}
 .ws-out{-webkit-text-stroke:1.5px var(--ink);color:transparent}
-.ws-drop{width:44px;height:44px;flex:none;fill:var(--blue)}
+.ws-drop{width:64px;height:48px;flex:none;color:var(--blue);fill:currentColor}
 
 /* LAYOUT UTIL */
 .sec{padding:120px 36px 80px;max-width:1480px;margin:0 auto}
@@ -288,6 +288,32 @@ h1.display em{font-style:normal;display:block;margin-top:-.04em}
 }
 
 /* ============================================================
+   STUDIO — auto-scrolling product carousel (clean studio shots)
+   ============================================================ */
+.studio{max-width:none;padding:80px 0 40px;background:var(--paper-warm);overflow:hidden;position:relative;border-top:1px solid var(--line-soft)}
+.studio-head{max-width:1480px;margin:0 auto 40px;padding:0 36px;display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:end}
+.studio-h{font-family:"Radlush Display",sans-serif;font-size:clamp(34px,4.4vw,68px);line-height:.92;letter-spacing:-.03em;text-transform:uppercase;color:var(--blue-deep);justify-self:end}
+.studio-track-wrap{position:relative;width:100%;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.studio-track{display:flex;gap:14px;width:max-content;animation:studio-scroll 60s linear infinite;will-change:transform}
+.studio-track:hover{animation-play-state:paused}
+.studio-card{flex:0 0 auto;width:280px;height:340px;border-radius:18px;overflow:hidden;position:relative;background:#fff;border:1px solid var(--line-soft);margin:0;box-shadow:0 8px 24px -16px rgba(5,5,69,.12)}
+.studio-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1s ease}
+.studio-card:hover img{transform:scale(1.05)}
+.studio-card figcaption{position:absolute;left:12px;bottom:12px;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);color:var(--blue-deep);padding:6px 11px;border-radius:999px;font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+@keyframes studio-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){.studio-track{animation:none}}
+@media (max-width:1024px){
+  .studio{padding:64px 0 32px}
+  .studio-head{grid-template-columns:1fr;gap:14px;padding:0 24px;margin-bottom:30px}
+  .studio-h{justify-self:start}
+  .studio-card{width:220px;height:280px}
+  .studio-track{animation-duration:55s}
+}
+@media (max-width:640px){
+  .studio-card{width:180px;height:240px}
+}
+
+/* ============================================================
    IN THE WILD — auto-scrolling lifestyle carousel
    ============================================================ */
 .wild{max-width:none;padding:80px 0 100px;background:linear-gradient(180deg,var(--paper) 0%,var(--paper-warm) 100%);overflow:hidden;position:relative}
@@ -321,16 +347,27 @@ h1.display em{font-style:normal;display:block;margin-top:-.04em}
 .p-aside-tag{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);display:flex;align-items:center;gap:8px;font-weight:500}
 .p-aside-tag i{width:5px;height:5px;background:var(--blue);border-radius:50%;font-style:normal;display:inline-block}
 .p-aside-h{font-family:"Radlush Display",sans-serif;font-size:clamp(36px,4vw,60px);line-height:.92;letter-spacing:-.025em;text-transform:uppercase;color:#fff;margin:0}
-.p-aside-h .strike{position:relative;display:inline-block;color:#9aa3ff}
-.p-aside-h .strike::after{content:"";position:absolute;left:-3%;right:-3%;top:48%;height:4px;background:var(--blue);transform:rotate(-3deg);border-radius:2px;box-shadow:0 0 12px rgba(45,105,255,.5)}
+.p-aside-h .strike{position:relative;display:inline-block;color:rgba(255,255,255,.55)}
+.p-aside-h .strike::after{content:"";position:absolute;left:-2%;right:-2%;top:52%;height:3px;background:rgba(255,255,255,.85);transform:rotate(-2deg);border-radius:1px}
 .p-aside-copy p{font-size:16.5px;line-height:1.6;color:#bcc0d0;max-width:520px;margin:0}
 .p-aside-meta{display:flex;flex-wrap:wrap;gap:10px;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8a90a8;margin-top:14px;align-items:center}
 .p-aside-meta .sep{opacity:.5}
 .p-aside-meta a{color:var(--blue);text-decoration:none;font-weight:600;display:inline-flex;align-items:center;gap:6px;transition:gap .25s,color .25s}
 .p-aside-meta a:hover{gap:10px;color:#9aa3ff}
 .p-aside-photo{position:relative;background:#0c0c08;overflow:hidden;min-height:380px}
-.p-aside-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s ease}
-.p-aside:hover .p-aside-photo img{transform:scale(1.03)}
+.aside-track{display:flex;height:100%;animation:aside-scroll 24s cubic-bezier(.65,.05,.36,1) infinite;will-change:transform}
+.aside-slide{flex:0 0 100%;height:100%;width:100%;position:relative;background:#0c0c08}
+.aside-slide img{width:100%;height:100%;object-fit:cover;display:block}
+@keyframes aside-scroll{
+  0%, 18%   {transform:translateX(0)}
+  25%, 43%  {transform:translateX(-100%)}
+  50%, 68%  {transform:translateX(-200%)}
+  75%, 93%  {transform:translateX(-300%)}
+  100%      {transform:translateX(-400%)}
+}
+.aside-photo-dots{position:absolute;bottom:14px;right:14px;z-index:3;display:flex;gap:6px}
+.aside-photo-dots span{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.35);transition:background .25s}
+@media (prefers-reduced-motion: reduce){.aside-track{animation:none}}
 
 @media (max-width:1024px){
   .p-aside{grid-template-columns:1fr}
@@ -379,20 +416,28 @@ h1.display em{font-style:normal;display:block;margin-top:-.04em}
 .vibes{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:200px;gap:16px;margin-top:20px}
 .vibe{position:relative;border-radius:20px;overflow:hidden;background:var(--blue-deep);color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:20px;transition:transform .4s}
 .vibe:hover{transform:translateY(-4px)}
-.vibe::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(0,0,0,.6))}
-.vibe>*{position:relative;z-index:2}
+.vibe img.vibe-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform 1s ease;z-index:0}
+.vibe:hover img.vibe-bg{transform:scale(1.04)}
+.vibe::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(0,0,0,.7));z-index:1}
+.vibe>*:not(img){position:relative;z-index:2}
 .vibe-tag{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;opacity:.75;margin-bottom:5px}
 .vibe h5{font-family:"Radlush Display",sans-serif;font-size:21px;line-height:.96;letter-spacing:-.01em;text-transform:uppercase}
-.v1{grid-column:span 5;grid-row:span 2;background:url('assets/lifestyle/gainz-basketball.png') center/cover}
-.v2{grid-column:span 4;background:url('assets/lifestyle/thc-bmx-night.png') center/cover}
+.v1{grid-column:span 5;grid-row:span 2}
+.v2{grid-column:span 4}
 .v3{grid-column:span 3;background:#fff;color:var(--ink)}
 .v3::after{display:none}
-.v4{grid-column:span 3;background:url('assets/lifestyle/premium-dinner-rooftop.png') center/cover}
-.v5{grid-column:span 4;background:url('assets/lifestyle/river-cleanup-buriganga.png') center/cover}
-.v5::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 25%,rgba(1,69,56,.85))}
+.v4{grid-column:span 3}
+.v5{grid-column:span 4}
+.v5::after{background:linear-gradient(180deg,transparent 25%,rgba(1,69,56,.9))}
 .v5 .v5-stat{font-family:"Radlush Display",sans-serif;font-size:78px;line-height:.84;letter-spacing:-.04em;color:#7FE3B0;margin-top:auto}
 .v5 .v5-sub{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#c8eed7;margin-top:8px;line-height:1.5}
-.v6{grid-column:span 5;background:url('assets/lifestyle/wellness-rooftop-couple.png') center/cover}
+.v6{grid-column:span 5}
+/* Per-tile object-position tuning so faces/products stay visible */
+.v1 img.vibe-bg{object-position:center 30%}
+.v2 img.vibe-bg{object-position:center center}
+.v4 img.vibe-bg{object-position:center 35%}
+.v5 img.vibe-bg{object-position:center 40%}
+.v6 img.vibe-bg{object-position:center 25%}
 .v3 .quote{font-family:"Radlush Display",sans-serif;font-size:26px;line-height:.95;letter-spacing:-.02em;text-transform:uppercase;color:var(--ink)}
 .v3 .vibe-tag{color:#5b6582;opacity:1}
 
@@ -423,8 +468,9 @@ h1.display em{font-style:normal;display:block;margin-top:-.04em}
 .perks{margin-top:24px;display:flex;flex-wrap:wrap;gap:16px;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#cfd8ff}
 .perks span{display:flex;align-items:center;gap:7px}
 .perks i{width:4px;height:4px;background:#fff;border-radius:50%;font-style:normal;display:inline-block}
-.connect-visual{position:relative;height:480px;border-radius:24px;overflow:hidden;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18)}
-.connect-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.connect-visual{position:relative;height:480px;min-height:320px;border-radius:24px;overflow:hidden;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18)}
+.connect-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block}
+.connect-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(45,105,255,.35));pointer-events:none}
 .connect-chip{position:absolute;z-index:3;top:18px;left:18px;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);color:var(--blue-deep);padding:9px 14px;border-radius:999px;font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:500}
 .c-stamp{display:none}
 
@@ -437,11 +483,11 @@ h1.display em{font-style:normal;display:block;margin-top:-.04em}
 .sip-h .accent{color:#7da4ff}
 .sip-p{font-size:17px;line-height:1.55;color:#b8c4e8;margin-top:24px;max-width:430px}
 .sip-row{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
-.sip-row a{padding:12px 20px;border-radius:999px;font-size:13px;font-weight:600;display:inline-flex;align-items:center;gap:9px}
+.sip-row a{padding:13px 22px;border-radius:999px;font-family:"Radlush Display",sans-serif;font-size:12.5px;text-transform:uppercase;letter-spacing:.04em;display:inline-flex;align-items:center;gap:9px;white-space:nowrap}
 .sip-a1{background:#fff;color:#0a1330}
 .sip-a2{border:1px solid rgba(255,255,255,.28);color:#fff}
-.sip-img{position:relative;z-index:2;height:520px;background:url('assets/products/sip-cups-stacked.png') center/cover no-repeat;border-radius:0 32px 32px 0}
-.sip-img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,19,48,.45) 0%,transparent 35%);pointer-events:none}
+.sip-img{position:relative;z-index:2;height:520px;background:#0a1330 url('assets/products/sip-cups-stacked.png') center bottom/contain no-repeat;border-radius:0 32px 32px 0}
+.sip-img::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 80% at 50% 60%,rgba(45,105,255,.18),transparent 70%);pointer-events:none}
 
 /* FOOTER CTA */
 .footer-cta{padding:120px 36px 60px;max-width:1480px;margin:0 auto;text-align:center}
@@ -902,18 +948,18 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--blue);outline-offse
 <div class="wordstrip">
   <div class="ws-track">
     <span class="ws-word">Drink Different
-      <svg class="ws-drop" viewBox="0 0 24 24"><path d="M12 2C7 9 4 13 4 17a8 8 0 0 0 16 0C20 13 17 9 12 2z"/></svg>
+      <svg class="ws-drop" viewBox="0 0 60 60" fill="currentColor" aria-hidden="true"><ellipse cx="6" cy="30" rx="3" ry="14"/><ellipse cx="16" cy="30" rx="5" ry="22"/><ellipse cx="28" cy="30" rx="6" ry="26"/><path d="M36 4 a26 26 0 0 1 0 52 z"/></svg>
       <span class="ws-word ws-out">Do More</span>
-      <svg class="ws-drop" viewBox="0 0 24 24"><path d="M12 2C7 9 4 13 4 17a8 8 0 0 0 16 0C20 13 17 9 12 2z"/></svg>
+      <svg class="ws-drop" viewBox="0 0 60 60" fill="currentColor" aria-hidden="true"><ellipse cx="6" cy="30" rx="3" ry="14"/><ellipse cx="16" cy="30" rx="5" ry="22"/><ellipse cx="28" cy="30" rx="6" ry="26"/><path d="M36 4 a26 26 0 0 1 0 52 z"/></svg>
       Made Here
-      <svg class="ws-drop" viewBox="0 0 24 24"><path d="M12 2C7 9 4 13 4 17a8 8 0 0 0 16 0C20 13 17 9 12 2z"/></svg>
+      <svg class="ws-drop" viewBox="0 0 60 60" fill="currentColor" aria-hidden="true"><ellipse cx="6" cy="30" rx="3" ry="14"/><ellipse cx="16" cy="30" rx="5" ry="22"/><ellipse cx="28" cy="30" rx="6" ry="26"/><path d="M36 4 a26 26 0 0 1 0 52 z"/></svg>
     </span>
     <span class="ws-word">Drink Different
-      <svg class="ws-drop" viewBox="0 0 24 24"><path d="M12 2C7 9 4 13 4 17a8 8 0 0 0 16 0C20 13 17 9 12 2z"/></svg>
+      <svg class="ws-drop" viewBox="0 0 60 60" fill="currentColor" aria-hidden="true"><ellipse cx="6" cy="30" rx="3" ry="14"/><ellipse cx="16" cy="30" rx="5" ry="22"/><ellipse cx="28" cy="30" rx="6" ry="26"/><path d="M36 4 a26 26 0 0 1 0 52 z"/></svg>
       <span class="ws-word ws-out">Do More</span>
-      <svg class="ws-drop" viewBox="0 0 24 24"><path d="M12 2C7 9 4 13 4 17a8 8 0 0 0 16 0C20 13 17 9 12 2z"/></svg>
+      <svg class="ws-drop" viewBox="0 0 60 60" fill="currentColor" aria-hidden="true"><ellipse cx="6" cy="30" rx="3" ry="14"/><ellipse cx="16" cy="30" rx="5" ry="22"/><ellipse cx="28" cy="30" rx="6" ry="26"/><path d="M36 4 a26 26 0 0 1 0 52 z"/></svg>
       Made Here
-      <svg class="ws-drop" viewBox="0 0 24 24"><path d="M12 2C7 9 4 13 4 17a8 8 0 0 0 16 0C20 13 17 9 12 2z"/></svg>
+      <svg class="ws-drop" viewBox="0 0 60 60" fill="currentColor" aria-hidden="true"><ellipse cx="6" cy="30" rx="3" ry="14"/><ellipse cx="16" cy="30" rx="5" ry="22"/><ellipse cx="28" cy="30" rx="6" ry="26"/><path d="M36 4 a26 26 0 0 1 0 52 z"/></svg>
     </span>
   </div>
 </div>
@@ -1124,10 +1170,57 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--blue);outline-offse
         </div>
       </div>
       <div class="p-aside-photo">
-        <img src="assets/products/sip-bottles.png" alt="SIP recycled bottled water — for the plastic fans" loading="lazy"/>
+        <div class="aside-track">
+          <div class="aside-slide"><img src="assets/products/sip-bottles.png" alt="SIP recycled bottled water" loading="lazy"/></div>
+          <div class="aside-slide"><img src="assets/products/sip-plastic-solo.png" alt="SIP plastic bottle, 500ml" loading="lazy"/></div>
+          <div class="aside-slide"><img src="assets/products/sip-plastic-small.png" alt="SIP plastic bottle, 250ml" loading="lazy"/></div>
+          <div class="aside-slide"><img src="assets/lifestyle/lineup-rooftop-friends.png" alt="SIP at a rooftop dinner" loading="lazy"/></div>
+          <!-- duplicate to seamlessly loop -->
+          <div class="aside-slide" aria-hidden="true"><img src="assets/products/sip-bottles.png" alt="" loading="lazy"/></div>
+        </div>
+        <div class="aside-photo-dots" aria-hidden="true">
+          <span></span><span></span><span></span><span></span>
+        </div>
       </div>
     </article>
 
+  </div>
+</section>
+
+<!-- STUDIO — auto-scrolling product carousel -->
+<section class="studio" aria-label="Product studio">
+  <div class="studio-head">
+    <div class="meta-lbl"><i></i> Up close</div>
+    <h3 class="studio-h">Every bottle, every <span class="c-blue">angle.</span></h3>
+  </div>
+  <div class="studio-track-wrap">
+    <div class="studio-track">
+      <figure class="studio-card"><img src="assets/products/glass-cobalt-trio.png" alt="Premium Glass — cobalt edition" loading="lazy"/><figcaption>Premium Glass · Cobalt</figcaption></figure>
+      <figure class="studio-card"><img src="assets/products/glass-solo-clear.png" alt="Premium Glass — clear single" loading="lazy"/><figcaption>Premium Glass · 750ml</figcaption></figure>
+      <figure class="studio-card"><img src="assets/products/can-trio.png" alt="Premium Water cans" loading="lazy"/><figcaption>Premium Can · 473ml</figcaption></figure>
+      <figure class="studio-card"><img src="assets/products/can-trio-side.png" alt="Premium Water cans alt angle" loading="lazy"/><figcaption>Premium Can · Side</figcaption></figure>
+      <figure class="studio-card"><img src="assets/products/sip-stack-light.png" alt="SIP Cup Water stack" loading="lazy"/><figcaption>SIP Cups · Stack</figcaption></figure>
+      <figure class="studio-card"><img src="assets/products/sip-cups-stacked.png" alt="SIP Cups on ice" loading="lazy"/><figcaption>SIP Cups · On ice</figcaption></figure>
+      <figure class="studio-card"><img src="assets/products/thce-box.png" alt="THCE box with sachets" loading="lazy"/><figcaption>THCE · The full set</figcaption></figure>
+      <figure class="studio-card"><img src="assets/products/thce-sachet-fan.png" alt="THCE sachets fanned out" loading="lazy"/><figcaption>THCE · Sachets</figcaption></figure>
+      <figure class="studio-card"><img src="assets/products/gainz-protein.png" alt="GAINZ Protein Water trio" loading="lazy"/><figcaption>GAINZ · 20g protein</figcaption></figure>
+      <figure class="studio-card"><img src="assets/products/gainz-trio-alt.png" alt="GAINZ Protein Water alt" loading="lazy"/><figcaption>GAINZ · Tropical lime</figcaption></figure>
+      <figure class="studio-card"><img src="assets/products/wellness-water-trio.png" alt="Wellness Water variants" loading="lazy"/><figcaption>Wellness · 3 variants</figcaption></figure>
+      <figure class="studio-card"><img src="assets/products/sip-bottles.png" alt="SIP plastic bottles" loading="lazy"/><figcaption>SIP Bottles · Plastic</figcaption></figure>
+      <!-- duplicate for seamless loop -->
+      <figure class="studio-card" aria-hidden="true"><img src="assets/products/glass-cobalt-trio.png" alt="" loading="lazy"/><figcaption>Premium Glass · Cobalt</figcaption></figure>
+      <figure class="studio-card" aria-hidden="true"><img src="assets/products/glass-solo-clear.png" alt="" loading="lazy"/><figcaption>Premium Glass · 750ml</figcaption></figure>
+      <figure class="studio-card" aria-hidden="true"><img src="assets/products/can-trio.png" alt="" loading="lazy"/><figcaption>Premium Can · 473ml</figcaption></figure>
+      <figure class="studio-card" aria-hidden="true"><img src="assets/products/can-trio-side.png" alt="" loading="lazy"/><figcaption>Premium Can · Side</figcaption></figure>
+      <figure class="studio-card" aria-hidden="true"><img src="assets/products/sip-stack-light.png" alt="" loading="lazy"/><figcaption>SIP Cups · Stack</figcaption></figure>
+      <figure class="studio-card" aria-hidden="true"><img src="assets/products/sip-cups-stacked.png" alt="" loading="lazy"/><figcaption>SIP Cups · On ice</figcaption></figure>
+      <figure class="studio-card" aria-hidden="true"><img src="assets/products/thce-box.png" alt="" loading="lazy"/><figcaption>THCE · The full set</figcaption></figure>
+      <figure class="studio-card" aria-hidden="true"><img src="assets/products/thce-sachet-fan.png" alt="" loading="lazy"/><figcaption>THCE · Sachets</figcaption></figure>
+      <figure class="studio-card" aria-hidden="true"><img src="assets/products/gainz-protein.png" alt="" loading="lazy"/><figcaption>GAINZ · 20g protein</figcaption></figure>
+      <figure class="studio-card" aria-hidden="true"><img src="assets/products/gainz-trio-alt.png" alt="" loading="lazy"/><figcaption>GAINZ · Tropical lime</figcaption></figure>
+      <figure class="studio-card" aria-hidden="true"><img src="assets/products/wellness-water-trio.png" alt="" loading="lazy"/><figcaption>Wellness · 3 variants</figcaption></figure>
+      <figure class="studio-card" aria-hidden="true"><img src="assets/products/sip-bottles.png" alt="" loading="lazy"/><figcaption>SIP Bottles · Plastic</figcaption></figure>
+    </div>
   </div>
 </section>
 
@@ -1228,10 +1321,12 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--blue);outline-offse
   </div>
   <div class="vibes">
     <div class="vibe v1">
+      <img class="vibe-bg" src="assets/lifestyle/gainz-basketball.png" alt="GAINZ at the basketball court" loading="lazy"/>
       <span class="vibe-tag">Field notes / Dhaka</span>
       <h5>Court days. GAINZ nights.</h5>
     </div>
     <div class="vibe v2">
+      <img class="vibe-bg" src="assets/lifestyle/thc-bmx-night.png" alt="THC × Hatirjheel BMX scene" loading="lazy"/>
       <span class="vibe-tag">Drop / 003 · Hatirjheel</span>
       <h5>THC × the local BMX scene</h5>
     </div>
@@ -1240,15 +1335,18 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--blue);outline-offse
       <p class="quote">"Premium doesn't need a foreign passport."</p>
     </div>
     <div class="vibe v4">
+      <img class="vibe-bg" src="assets/lifestyle/premium-dinner-rooftop.png" alt="Premium glass at a rooftop dinner" loading="lazy"/>
       <span class="vibe-tag">Rooftop dinner</span>
       <h5>Premium glass at the table</h5>
     </div>
     <div class="vibe v5">
+      <img class="vibe-bg" src="assets/lifestyle/river-cleanup-buriganga.png" alt="Buriganga river cleanup" loading="lazy"/>
       <span class="vibe-tag" style="color:#7FE3B0;opacity:1">Planet / river day</span>
       <div class="v5-stat">40<span style="font-size:.4em;letter-spacing:0">KG</span></div>
       <div class="v5-sub">Plastic removed.<br/>Buriganga River. April '26.</div>
     </div>
     <div class="vibe v6">
+      <img class="vibe-bg" src="assets/lifestyle/wellness-rooftop-couple.png" alt="Wellness Water sunset on a Dhaka rooftop" loading="lazy"/>
       <span class="vibe-tag">Wellness Water · sunset</span>
       <h5>Made for how Dhaka unwinds.</h5>
     </div>
