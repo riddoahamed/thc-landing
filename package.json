@@ -1,0 +1,10 @@
+{
+  "name": "thc-landing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static landing page for The Hydration Company.",
+  "scripts": {
+    "build": "node -e \"console.log('Static site ready: no build step required.')\"",
+    "vercel-build": "npm run build"
+  }
+}
